@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friedrich Nietzsche — 尼采全覽</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;700;900&family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1209;
+    --parchment: #f5efe2;
+    --gold: #c9a84c;
+    --rust: #8b3a2a;
+    --ash: #6b6358;
+    --cream: #faf6ed;
+    --dark-bg: #0e0c08;
+    --accent: #d4a843;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark-bg);
+    color: var(--parchment);
+    font-family: 'Noto Serif TC', 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(14,12,8,0.95), transparent);
+    backdrop-filter: blur(2px);
+  }
+
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.75rem;
+    color: var(--ash);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 110%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 20% 30%, rgba(139,58,42,0.06) 0%, transparent 50%),
+      var(--dark-bg);
+  }
+
+  .hero-deco {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .hero-deco svg {
+    width: 70vw;
+    max-width: 900px;
+    opacity: 0.04;
+    animation: slow-spin 120s linear infinite;
+  }
+
+  @keyframes slow-spin { to { transform: rotate(360deg); } }
+
+  .hero-content {
+    text-align: center;
+    z-index: 2;
+    padding: 2rem;
+    animation: fade-up 1.4s ease both;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fade-up 1.4s 0.2s ease both;
+  }
+
+  .hero-name {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3.5rem, 10vw, 9rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #e8d5a0 0%, var(--gold) 40%, #a07828 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    animation: fade-up 1.4s 0.3s ease both;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-style: italic;
+    color: var(--ash);
+    letter-spacing: 0.08em;
+    margin-bottom: 3rem;
+    animation: fade-up 1.4s 0.5s ease both;
+  }
+
+  .hero-dates {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: var(--rust);
+    animation: fade-up 1.4s 0.7s ease both;
+  }
+
+  .hero-quote {
+    margin-top: 4rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-style: italic;
+    color: rgba(245,239,226,0.5);
+    max-width: 600px;
+    line-height: 1.8;
+    animation: fade-up 1.4s 0.9s ease both;
+  }
+
+  .hero-quote::before { content: '"'; color: var(--gold); font-size: 2em; line-height: 0; vertical-align: -0.4em; margin-right: 0.2em; }
+  .hero-quote::after  { content: '"'; color: var(--gold); font-size: 2em; line-height: 0; vertical-align: -0.4em; margin-left:  0.2em; }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fade-up 2s 1.5s ease both;
+  }
+
+  .scroll-hint span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.4em;
+    color: var(--ash);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scroll-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-pulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  /* ── SECTION COMMON ── */
+  section {
+    padding: 8rem 2rem;
+    position: relative;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    max-width: 200px;
+    opacity: 0.4;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--parchment);
+    margin-bottom: 3rem;
+  }
+
+  /* ── BIOGRAPHY ── */
+  #biography {
+    background: linear-gradient(to bottom, var(--dark-bg), #121009, var(--dark-bg));
+  }
+
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) { .bio-grid { grid-template-columns: 1fr; } }
+
+  .bio-text p {
+    font-size: 1rem;
+    line-height: 2;
+    color: rgba(245,239,226,0.75);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    opacity: 0.3;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.6s ease;
+  }
+
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 0.4rem;
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--gold);
+    background: var(--dark-bg);
+    border-radius: 50%;
+  }
+
+  .timeline-year {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: rgba(245,239,226,0.65);
+    line-height: 1.6;
+  }
+
+  /* ── PHILOSOPHY ── */
+  #philosophy {
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 50%, rgba(139,58,42,0.05) 0%, transparent 70%),
+      var(--dark-bg);
+  }
+
+  .phil-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .phil-card {
+    border: 1px solid rgba(201,168,76,0.12);
+    padding: 2.5rem;
+    position: relative;
+    background: rgba(255,255,255,0.02);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .phil-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .phil-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .phil-card:hover { border-color: rgba(201,168,76,0.3); background: rgba(255,255,255,0.04); }
+  .phil-card:hover::before { opacity: 1; }
+
+  .phil-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    opacity: 0.7;
+  }
+
+  .phil-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .phil-body {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: rgba(245,239,226,0.65);
+  }
+
+  /* ── WORKS ── */
+  #works {
+    background: linear-gradient(to bottom, var(--dark-bg), #0a0806);
+  }
+
+  .works-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+
+  .works-table th {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-align: left;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    text-transform: uppercase;
+  }
+
+  .works-table td {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 0.88rem;
+    color: rgba(245,239,226,0.7);
+    vertical-align: top;
+    line-height: 1.6;
+    transition: background 0.3s;
+  }
+
+  .works-table tr:hover td { background: rgba(201,168,76,0.04); }
+
+  .work-title-zh {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--parchment);
+    font-size: 0.95rem;
+  }
+
+  .work-title-de {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--ash);
+    margin-top: 0.2rem;
+  }
+
+  .work-year {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .work-tag {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    padding: 0.2rem 0.7rem;
+    border: 1px solid;
+    border-radius: 0;
+  }
+
+  .tag-early { border-color: rgba(107,99,88,0.5); color: var(--ash); }
+  .tag-middle { border-color: rgba(201,168,76,0.4); color: var(--gold); }
+  .tag-late { border-color: rgba(139,58,42,0.5); color: var(--rust); }
+  .tag-posth { border-color: rgba(139,58,42,0.3); color: rgba(139,58,42,0.8); }
+
+  /* ── QUOTES ── */
+  #quotes {
+    background:
+      radial-gradient(ellipse 60% 60% at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 60%),
+      var(--dark-bg);
+  }
+
+  .quotes-masonry {
+    columns: 2;
+    column-gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 700px) { .quotes-masonry { columns: 1; } }
+
+  .quote-card {
+    break-inside: avoid;
+    border-left: 2px solid rgba(201,168,76,0.3);
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+  }
+
+  .quote-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .quote-card:hover { border-left-color: var(--gold); }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: rgba(245,239,226,0.8);
+    margin-bottom: 0.8rem;
+  }
+
+  .quote-source {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    color: var(--ash);
+  }
+
+  /* ── INFLUENCE ── */
+  #influence {
+    background: linear-gradient(to bottom, #0a0806, var(--dark-bg));
+  }
+
+  .influence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .influence-card {
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.015);
+    text-align: center;
+    transition: all 0.4s;
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  .influence-card.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .influence-card:hover {
+    border-color: rgba(201,168,76,0.25);
+    background: rgba(201,168,76,0.04);
+  }
+
+  .influence-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--parchment);
+    margin-bottom: 0.5rem;
+  }
+
+  .influence-field {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .influence-desc {
+    font-size: 0.8rem;
+    color: var(--ash);
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 4rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    background: #080604;
+  }
+
+  .footer-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.5em;
+    color: var(--ash);
+    margin-bottom: 1rem;
+  }
+
+  .footer-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(245,239,226,0.3);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    text-align: center;
+    padding: 2rem 0;
+    color: rgba(201,168,76,0.2);
+    font-size: 1.5rem;
+    letter-spacing: 1em;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Friedrich Nietzsche</div>
+  <ul class="nav-links">
+    <li><a href="#biography">生平</a></li>
+    <li><a href="#philosophy">哲學</a></li>
+    <li><a href="#works">著作</a></li>
+    <li><a href="#quotes">語錄</a></li>
+    <li><a href="#influence">影響</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-deco">
+    <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="300" cy="300" r="280" stroke="white" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="220" stroke="white" stroke-width="0.3"/>
+      <circle cx="300" cy="300" r="160" stroke="white" stroke-width="0.5"/>
+      <line x1="300" y1="20" x2="300" y2="580" stroke="white" stroke-width="0.3"/>
+      <line x1="20" y1="300" x2="580" y2="300" stroke="white" stroke-width="0.3"/>
+      <line x1="102" y1="102" x2="498" y2="498" stroke="white" stroke-width="0.3"/>
+      <line x1="498" y1="102" x2="102" y2="498" stroke="white" stroke-width="0.3"/>
+      <polygon points="300,40 540,440 60,440" stroke="white" stroke-width="0.5" fill="none"/>
+      <polygon points="300,560 60,160 540,160" stroke="white" stroke-width="0.5" fill="none"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">德國哲學家 · 文化批評家 · 詩人</div>
+    <h1 class="hero-name">NIETZSCHE</h1>
+    <div class="hero-subtitle">弗里德里希·威廉·尼采</div>
+    <div class="hero-dates">Friedrich Wilhelm Nietzsche &nbsp;·&nbsp; 1844 – 1900</div>
+    <p class="hero-quote">凡殺不死我的，必使我更強大</p>
+  </div>
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="divider">· · · ✦ · · ·</div>
+
+<!-- BIOGRAPHY -->
+<section id="biography">
+  <div class="container">
+    <div class="section-label">01 &nbsp; 生平</div>
+    <h2 class="section-title reveal">思想的鷹隼，<br><em>在孤峰上盤旋</em></h2>
+    <div class="bio-grid">
+      <div class="bio-text reveal">
+        <p>弗里德里希·威廉·尼采，1844年10月15日出生於普魯士薩克森的呂肯（Röcken），父親為路德教派牧師。五歲喪父的陰影與極度敏感的天性，為他日後對宗教與道德的批判埋下了種子。</p>
+        <p>尼采自幼展現驚人的語言與音樂天賦。十七歲進入普福塔寄宿學校（Schulpforta），後就讀波昂大學與萊比錫大學，師從古典學大師里奇爾（Friedrich Ritschl），研習古典語文學。</p>
+        <p>1869年，年僅二十四歲便獲聘為巴塞爾大學古典語文學教授，是當時最年輕的教授之一。初期深受叔本華悲觀主義哲學影響，並與華格納結為摯友，這段友誼後來以決裂告終。</p>
+        <p>1879年因嚴重的偏頭痛與視力問題辭去教職，開始四海為家的流亡寫作生涯，在義大利、法國與瑞士之間漂泊，於痛苦與孤獨中完成最重要的著作。1889年精神崩潰，此後在母親及妹妹伊麗莎白的照料下度過餘生，1900年8月25日於威瑪辭世。</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">1844</div>
+          <div class="timeline-desc">10月15日生於薩克森州呂肯，父為路德教派牧師</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1849</div>
+          <div class="timeline-desc">父親病逝，由母親與姑母撫養長大</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1858</div>
+          <div class="timeline-desc">進入普福塔精英寄宿學校就讀</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1865</div>
+          <div class="timeline-desc">偶然讀到叔本華《意志與表象的世界》，深受震撼</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1868</div>
+          <div class="timeline-desc">結識華格納，開啟深厚卻最終決裂的友誼</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1869</div>
+          <div class="timeline-desc">受聘巴塞爾大學古典語文學教授，年僅24歲</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1872</div>
+          <div class="timeline-desc">出版處女作《悲劇的誕生》，引發學術爭議</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1879</div>
+          <div class="timeline-desc">健康惡化，辭去教職，開始流亡寫作生涯</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1883</div>
+          <div class="timeline-desc">《查拉圖斯特拉如是說》第一部問世</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1889</div>
+          <div class="timeline-desc">1月都靈精神崩潰，此後失去寫作能力</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1900</div>
+          <div class="timeline-desc">8月25日於威瑪辭世，享年55歲</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">· · · ✦ · · ·</div>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="container">
+    <div class="section-label">02 &nbsp; 核心哲學</div>
+    <h2 class="section-title reveal">錘子哲學，<br><em>敲碎舊有偶像</em></h2>
+    <div class="phil-grid">
+      <div class="phil-card">
+        <div class="phil-icon">⚡</div>
+        <div class="phil-title">權力意志<br><small style="font-size:0.7em;font-style:italic;color:var(--ash)">Wille zur Macht</small></div>
+        <div class="phil-body">尼采認為，生命最根本的衝動不是叔本華所說的「求生意志」，而是「權力意志」——一種不斷擴張、超越自身、創造與掌控的本能驅力。這種意志不僅是政治或肉體上的支配，更是精神上的自我超越與創造力的展現。</div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">🦅</div>
+        <div class="phil-title">超人<br><small style="font-size:0.7em;font-style:italic;color:var(--ash)">Übermensch</small></div>
+        <div class="phil-body">「超人」是尼采在《查拉圖斯特拉如是說》中提出的理想人格——一個能在「上帝已死」之後，以自身的創造力和意志為生命賦予意義的人。超人不受傳統道德束縛，是自己生命的立法者，以藝術家的姿態創造全新的價值體系。</div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">🔄</div>
+        <div class="phil-title">永恆輪迴<br><small style="font-size:0.7em;font-style:italic;color:var(--ash)">Ewige Wiederkehr</small></div>
+        <div class="phil-body">尼采最神祕的概念：若宇宙時間無限而物質有限，則一切事物必將以完全相同的形式無限重複發生。這不是形而上學主張，而是倫理試金石——若你甘願讓此刻的生命永遠重複，那你就真正地肯定了生命的一切，包含苦難。</div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">☠️</div>
+        <div class="phil-title">上帝已死<br><small style="font-size:0.7em;font-style:italic;color:var(--ash)">Gott ist tot</small></div>
+        <div class="phil-body">尼采並非宣告無神論，而是診斷出歐洲文明的根本危機：啟蒙理性已瓦解基督教的形而上學根基，但人類尚未找到替代的價值來源，因而陷入虛無主義。「上帝已死」是一記警鐘，呼籲人類正視這個危機並重建意義。</div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">🐑</div>
+        <div class="phil-title">奴隸道德 vs 主人道德<br><small style="font-size:0.7em;font-style:italic;color:var(--ash)">Herren- & Sklavenmoral</small></div>
+        <div class="phil-body">在《道德的系譜》中，尼采區分兩種道德：「主人道德」以「好/壞」為軸，源於強者的自我肯定；「奴隸道德」以「善/惡」為軸，源於弱者對強者的怨恨（Ressentiment）。他認為基督教道德是奴隸道德的集大成，是弱者壓制強者的精神復仇。</div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-icon">🎭</div>
+        <div class="phil-title">酒神 vs 日神<br><small style="font-size:0.7em;font-style:italic;color:var(--ash)">Dionysos & Apollo</small></div>
+        <div class="phil-body">在《悲劇的誕生》中，尼采以「酒神精神」（狂喜、混沌、本能、生命力）與「日神精神」（秩序、形式、理性、美）詮釋古希臘悲劇的精髓。偉大的藝術需要兩者的張力與融合，而蘇格拉底的理性主義則扼殺了酒神衝動，使西方文化走向衰竭。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">· · · ✦ · · ·</div>
+
+<!-- WORKS -->
+<section id="works">
+  <div class="container">
+    <div class="section-label">03 &nbsp; 主要著作</div>
+    <h2 class="section-title reveal">文字即匕首，<br><em>每字皆是宣戰</em></h2>
+    <table class="works-table reveal">
+      <thead>
+        <tr>
+          <th>年份</th>
+          <th>書名</th>
+          <th>時期</th>
+          <th>概述</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="work-year">1872</td>
+          <td>
+            <div class="work-title-zh">悲劇的誕生</div>
+            <div class="work-title-de">Die Geburt der Tragödie</div>
+          </td>
+          <td><span class="work-tag tag-early">早期</span></td>
+          <td>以日神與酒神二元論解析希臘悲劇，批判蘇格拉底理性主義，華格納精神影響濃厚</td>
+        </tr>
+        <tr>
+          <td class="work-year">1873–76</td>
+          <td>
+            <div class="work-title-zh">不合時宜的沉思</div>
+            <div class="work-title-de">Unzeitgemässe Betrachtungen</div>
+          </td>
+          <td><span class="work-tag tag-early">早期</span></td>
+          <td>四篇文化批評論文，批判歷史主義、大衛·史特勞斯，讚揚叔本華與華格納</td>
+        </tr>
+        <tr>
+          <td class="work-year">1878</td>
+          <td>
+            <div class="work-title-zh">人性的，太人性的</div>
+            <div class="work-title-de">Menschliches, Allzumenschliches</div>
+          </td>
+          <td><span class="work-tag tag-middle">中期</span></td>
+          <td>標誌轉向：從浪漫主義到實證主義，以箴言體批判形而上學、藝術崇拜與道德幻象</td>
+        </tr>
+        <tr>
+          <td class="work-year">1881</td>
+          <td>
+            <div class="work-title-zh">朝霞</div>
+            <div class="work-title-de">Morgenröte</div>
+          </td>
+          <td><span class="work-tag tag-middle">中期</span></td>
+          <td>對道德偏見的系統性批判，反對功利主義，初現「道德系譜」思路</td>
+        </tr>
+        <tr>
+          <td class="work-year">1882</td>
+          <td>
+            <div class="work-title-zh">快樂的科學</div>
+            <div class="work-title-de">Die fröhliche Wissenschaft</div>
+          </td>
+          <td><span class="work-tag tag-middle">中期</span></td>
+          <td>首次提出「上帝已死」，永恆輪迴思想初現，充滿詩意與格言的智慧之書</td>
+        </tr>
+        <tr>
+          <td class="work-year">1883–85</td>
+          <td>
+            <div class="work-title-zh">查拉圖斯特拉如是說</div>
+            <div class="work-title-de">Also sprach Zarathustra</div>
+          </td>
+          <td><span class="work-tag tag-late">晚期</span></td>
+          <td>尼采最重要的著作。以寓言詩體宣揚超人、永恆輪迴與權力意志，文學性極高</td>
+        </tr>
+        <tr>
+          <td class="work-year">1886</td>
+          <td>
+            <div class="work-title-zh">善惡的彼岸</div>
+            <div class="work-title-de">Jenseits von Gut und Böse</div>
+          </td>
+          <td><span class="work-tag tag-late">晚期</span></td>
+          <td>系統批判哲學傳統與基督教道德，發展權力意志理論，為《道德的系譜》奠基</td>
+        </tr>
+        <tr>
+          <td class="work-year">1887</td>
+          <td>
+            <div class="work-title-zh">道德的系譜</div>
+            <div class="work-title-de">Zur Genealogie der Moral</div>
+          </td>
+          <td><span class="work-tag tag-late">晚期</span></td>
+          <td>以歷史方法考察道德起源，揭示奴隸道德如何透過怨恨（Ressentiment）顛覆主人道德</td>
+        </tr>
+        <tr>
+          <td class="work-year">1888</td>
+          <td>
+            <div class="work-title-zh">偶像的黃昏</div>
+            <div class="work-title-de">Götzen-Dämmerung</div>
+          </td>
+          <td><span class="work-tag tag-late">晚期</span></td>
+          <td>以「錘子哲學」批判蘇格拉底、康德、叔本華，副標題「如何用錘子從事哲學」</td>
+        </tr>
+        <tr>
+          <td class="work-year">1888</td>
+          <td>
+            <div class="work-title-zh">敵基督者</div>
+            <div class="work-title-de">Der Antichrist</div>
+          </td>
+          <td><span class="work-tag tag-late">晚期</span></td>
+          <td>對基督教最激烈的攻擊，批判其對生命的否定性，同情佛教而批判保羅神學</td>
+        </tr>
+        <tr>
+          <td class="work-year">1888</td>
+          <td>
+            <div class="work-title-zh">尼采對抗華格納</div>
+            <div class="work-title-de">Nietzsche contra Wagner</div>
+          </td>
+          <td><span class="work-tag tag-late">晚期</span></td>
+          <td>從早期著作摘錄，批判華格納的頹廢主義與基督教化，宣告與浪漫主義決裂</td>
+        </tr>
+        <tr>
+          <td class="work-year">1888</td>
+          <td>
+            <div class="work-title-zh">瞧，這個人</div>
+            <div class="work-title-de">Ecce Homo</div>
+          </td>
+          <td><span class="work-tag tag-late">晚期</span></td>
+          <td>自傳體哲學回顧，各章以「我為何如此智慧」「如此聰慧」「如此寫出好書」命名</td>
+        </tr>
+        <tr>
+          <td class="work-year">1901</td>
+          <td>
+            <div class="work-title-zh">權力意志</div>
+            <div class="work-title-de">Der Wille zur Macht</div>
+          </td>
+          <td><span class="work-tag tag-posth">身後出版</span></td>
+          <td>由妹妹伊麗莎白編輯的遺稿選集，曾遭納粹挪用，現代學者對其詮釋多有保留</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="divider">· · · ✦ · · ·</div>
+
+<!-- QUOTES -->
+<section id="quotes">
+  <div class="container">
+    <div class="section-label">04 &nbsp; 名言語錄</div>
+    <h2 class="section-title reveal">箴言如閃電，<br><em>照亮黑暗之淵</em></h2>
+    <div class="quotes-masonry">
+      <div class="quote-card">
+        <div class="quote-text">凡殺不死我的，必使我更強大。</div>
+        <div class="quote-source">《偶像的黃昏》</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">當你凝視深淵時，深淵也在凝視你。</div>
+        <div class="quote-source">《善惡的彼岸》</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">上帝已死。上帝仍然死著。是我們殺死了他。</div>
+        <div class="quote-source">《快樂的科學》§125</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">沒有舞蹈的一天，是辜負了生命的一天。</div>
+        <div class="quote-source">《查拉圖斯特拉如是說》</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">人必須在心中孕育混沌，才能生出一顆舞動的星。</div>
+        <div class="quote-source">《查拉圖斯特拉如是說》</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">沒有音樂，生命將是一個錯誤。</div>
+        <div class="quote-source">《偶像的黃昏》</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">成為你自己。</div>
+        <div class="quote-source">《快樂的科學》</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">一個人若知道為何而活，幾乎可以忍受任何一種生活方式。</div>
+        <div class="quote-source">《偶像的黃昏》</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">我們愛生命，並非因為我們習慣生命，而是因為我們習慣愛。</div>
+        <div class="quote-source">《查拉圖斯特拉如是說》</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">真理是醜陋的。我們擁有藝術，是為了不讓真理毀滅我們。</div>
+        <div class="quote-source">《遺稿》</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">· · · ✦ · · ·</div>
+
+<!-- INFLUENCE -->
+<section id="influence">
+  <div class="container">
+    <div class="section-label">05 &nbsp; 思想影響</div>
+    <h2 class="section-title reveal">一個人的孤獨，<br><em>震動了整個二十世紀</em></h2>
+    <div class="influence-grid">
+      <div class="influence-card">
+        <div class="influence-name">馬丁·海德格</div>
+        <div class="influence-field">哲學</div>
+        <div class="influence-desc">深受尼采影響並對其進行系統詮釋，視尼采為西方形而上學的終結者</div>
+      </div>
+      <div class="influence-card">
+        <div class="influence-name">卡爾·雅斯培</div>
+        <div class="influence-field">存在主義</div>
+        <div class="influence-desc">將尼采列為存在哲學的奠基者之一，強調其對真實性的追求</div>
+      </div>
+      <div class="influence-card">
+        <div class="influence-name">米歇爾·傅柯</div>
+        <div class="influence-field">後結構主義</div>
+        <div class="influence-desc">借用尼采的「系譜學」方法，發展出權力—知識分析框架</div>
+      </div>
+      <div class="influence-card">
+        <div class="influence-name">雅克·德里達</div>
+        <div class="influence-field">解構主義</div>
+        <div class="influence-desc">視尼采為解構西方邏各斯中心主義的先驅思想家</div>
+      </div>
+      <div class="influence-card">
+        <div class="influence-name">阿爾貝·卡繆</div>
+        <div class="influence-field">荒誕主義</div>
+        <div class="influence-desc">從尼采的虛無主義出發，發展出以反抗為核心的存在倫理</div>
+      </div>
+      <div class="influence-card">
+        <div class="influence-name">卡爾·榮格</div>
+        <div class="influence-field">心理學</div>
+        <div class="influence-desc">將尼采的「陰影」概念整合進集體無意識理論</div>
+      </div>
+      <div class="influence-card">
+        <div class="influence-name">西格蒙德·佛洛伊德</div>
+        <div class="influence-field">精神分析</div>
+        <div class="influence-desc">承認尼采對無意識本能衝動的洞見早於精神分析的發展</div>
+      </div>
+      <div class="influence-card">
+        <div class="influence-name">湯瑪斯·曼</div>
+        <div class="influence-field">文學</div>
+        <div class="influence-desc">《浮士德博士》中廣泛融入尼采的音樂哲學與天才概念</div>
+      </div>
+      <div class="influence-card">
+        <div class="influence-name">理查·史特勞斯</div>
+        <div class="influence-field">音樂</div>
+        <div class="influence-desc">以交響詩《查拉圖斯特拉如是說》（1896）將尼采哲學化為音響</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">FRIEDRICH WILHELM NIETZSCHE · 1844–1900</div>
+  <p class="footer-quote">人是一根繩索，繫於動物與超人之間——懸掛在深淵上方的一根繩索。</p>
+</footer>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll(
+    '.reveal, .timeline-item, .phil-card, .quote-card, .influence-card'
+  ).forEach(el => observer.observe(el));
+
+  // Staggered animation delays
+  document.querySelectorAll('.phil-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+  });
+  document.querySelectorAll('.influence-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.08}s`;
+  });
+  document.querySelectorAll('.timeline-item').forEach((item, i) => {
+    item.style.transitionDelay = `${i * 0.07}s`;
+  });
+  document.querySelectorAll('.quote-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.06}s`;
+  });
+</script>
+</body>
+</html>
