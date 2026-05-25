@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新聞 Daily News — 2026年5月25日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f5f0e8;
+    font-family: 'Times New Roman', 'Noto Serif TC', serif;
+    color: #1a1a1a;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ===== MASTHEAD ===== */
+  .masthead {
+    background: #fff;
+    border-bottom: 5px double #1a1a1a;
+    text-align: center;
+    padding: 18px 20px 10px;
+  }
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .masthead h1 {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: 4px;
+    line-height: 1;
+    font-style: italic;
+  }
+  .masthead h1 span {
+    font-size: 0.45em;
+    letter-spacing: 8px;
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 4px;
+  }
+  .masthead-date {
+    font-size: 12px;
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  /* ===== SECTION DIVIDERS ===== */
+  .section-header {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 6px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin: 0;
+  }
+  .section-header .flag {
+    font-size: 1.3rem;
+    margin-right: 8px;
+  }
+
+  /* ===== NEWSPAPER GRID ===== */
+  .newspaper-section {
+    background: #fff;
+    border-bottom: 3px double #1a1a1a;
+    padding: 16px 20px;
+  }
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    border: 1px solid #1a1a1a;
+  }
+  .news-column {
+    padding: 14px 16px;
+    border-right: 1px solid #ccc;
+  }
+  .news-column:last-child {
+    border-right: none;
+  }
+
+  /* ===== CATEGORY LABEL ===== */
+  .category-label {
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+  }
+
+  /* ===== NEWS ITEM ===== */
+  .news-item {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .news-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .news-headline {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 5px;
+  }
+  .news-headline a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+  .news-headline a:hover {
+    text-decoration: underline;
+  }
+  .news-subhead {
+    font-size: 0.78rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  .news-body {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    text-align: justify;
+  }
+  .news-byline {
+    font-size: 0.72rem;
+    color: #888;
+    margin-top: 5px;
+    font-style: italic;
+  }
+  .news-byline::before {
+    content: '— ';
+  }
+
+  /* ===== FEATURED (lead story) ===== */
+  .lead-story .news-headline {
+    font-size: 1.3rem;
+  }
+  .lead-story .news-body {
+    font-size: 0.88rem;
+  }
+
+  /* ===== HORIZONTAL RULE IN MASTHEAD ===== */
+  .rule-thick { border: none; border-top: 3px solid #1a1a1a; margin: 4px 0; }
+  .rule-thin  { border: none; border-top: 1px solid #1a1a1a; margin: 4px 0; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 14px;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .news-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .masthead-top {
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+  @media (max-width: 420px) {
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== MASTHEAD ===== -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span>第壹版 ✦ 綜合新聞</span>
+    <span>每日更新 · 自動整理</span>
+    <span>售價：免費</span>
+  </div>
+  <h1>每日新聞<span>DAILY NEWS</span></h1>
+  <hr class="rule-thick">
+  <hr class="rule-thin">
+  <p class="masthead-date">中華民國一一五年五月二十五日（星期一）&emsp;|&emsp;2026年5月25日 &emsp;|&emsp; 台灣・美國・日本 三地新聞</p>
+</header>
+
+<!-- ============================= -->
+<!-- 🇹🇼 台灣版                    -->
+<!-- ============================= -->
+<div class="section-header"><span class="flag">🇹🇼</span>台灣 TAIWAN</div>
+<section class="newspaper-section">
+  <div class="news-grid">
+
+    <!-- 科技 -->
+    <div class="news-column lead-story">
+      <div class="category-label">📡 資訊科技 Technology</div>
+
+      <div class="news-item">
+        <div class="news-headline">黃仁勳降台！NVIDIA宣告Vera Rubin晶片將改寫產業歷史</div>
+        <div class="news-subhead">台北開發者大會登場，台灣供應鏈下半年全速運轉</div>
+        <div class="news-body">NVIDIA執行長黃仁勳提前於5月23日降落松山機場，親赴輝達台北開發者大會。黃仁勳於「Meet-A-Claw」主題演講中宣稱，Vera Rubin將成為電腦產業史上規模最大、運作速度最快的晶片平台，並預告台灣供應鏈下半年將迎來空前繁忙的出貨高峰。</div>
+        <div class="news-byline">科技新報 TechNews</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">台灣夏普推出「口袋同萌」陪伴型AI機器人</div>
+        <div class="news-body">夏普台灣在2026新品發表會上推出旗艦陪伴機器人「Poketomo（口袋同萌）」，建議售價新台幣12,990元。該款AI機器人主打居家陪伴功能，是台灣消費性AI機器人市場的重要里程碑。</div>
+        <div class="news-byline">數位時代 BusinessNext</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">記憶體短缺未解，筆電手機漲勢難擋</div>
+        <div class="news-body">記憶體供應持續吃緊，聯想、華碩已預告漲價，宏碁、戴爾、惠普亦達成漲價共識。分析師指出，消費電子端價格壓力恐在2026下半年全面爆發，民眾換機成本顯著上升。</div>
+        <div class="news-byline">Yahoo奇摩財經</div>
+      </div>
+    </div>
+
+    <!-- 體育 -->
+    <div class="news-column">
+      <div class="category-label">⚾ 體育 Sports</div>
+
+      <div class="news-item">
+        <div class="news-headline">台灣桌球女隊世桌賽爆冷門！3:1逆轉韓國</div>
+        <div class="news-body">在2026年倫敦世界團體桌球錦標賽小組賽首戰，中華女隊以3:1逆轉由世界盃銅牌申裕斌領軍的南韓隊，被媒體譽為本屆世桌賽最大冷門。教練賽後表示球員臨場應變出色，信心大增。</div>
+        <div class="news-byline">自由體育</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">鄧愷威7局無失分，助太空人橫掃小熊</div>
+        <div class="news-body">旅美好投鄧愷威在費城人對小熊的跨城市系列賽中投出6局無失分，率隊以3:0完封對手。鄧愷威本季表現持續穩定，在大聯盟站穩先發輪值一席。</div>
+        <div class="news-byline">聯合新聞網</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">台鋼天鷹晉級排球總冠軍賽</div>
+        <div class="news-body">台鋼天鷹在TPVL季後賽挑戰賽中以五局驚險擊敗台北伊斯特（22:25、25:22、25:20、17:25、15:11），成功晉級總冠軍賽，球迷到場加油氣氛熱烈。</div>
+        <div class="news-byline">TVBS新聞</div>
+      </div>
+    </div>
+
+    <!-- 金融 -->
+    <div class="news-column">
+      <div class="category-label">💹 金融財經 Finance</div>
+
+      <div class="news-item">
+        <div class="news-headline">台股突破四萬點大關！AI浪潮點火</div>
+        <div class="news-subhead">史上第三大單日漲點，資金持續湧入半導體族群</div>
+        <div class="news-body">台灣股市在AI相關題材帶動下正式站上四萬點，本月盤中一度暴漲1,560點，創史上第三大漲幅。台積電、聯發科等權值股輪番領軍，大盤重返42,000點整數大關。分析師認為AI基礎設施需求仍有持續動能。</div>
+        <div class="news-byline">鉅亨網</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">股市太火！520檔期房市依舊冷清</div>
+        <div class="news-body">央行今年3月微幅鬆綁房市信用管制，市場原本期待帶動買氣，但520旺季卻依舊低迷。業者分析最主要原因是股市資金磁吸效應過強，資金大量轉向股市，房市短期難以回溫。</div>
+        <div class="news-byline">聯合新聞網</div>
+      </div>
+    </div>
+
+    <!-- 娛樂 -->
+    <div class="news-column">
+      <div class="category-label">🎤 娛樂演藝 Entertainment</div>
+
+      <div class="news-item">
+        <div class="news-headline">動力火車「一路向前」世界巡演台北旗艦場圓滿落幕</div>
+        <div class="news-body">動力火車五月中旬在台北連開三場世界巡迴演唱會旗艦場，場場爆滿、情緒激昂。5月15至17日，歌迷從全台各地趕赴台北，演唱會現場氣氛媲美嘉年華。</div>
+        <div class="news-byline">噓！星聞</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">孫燕姿《就在日落以後》巡演台北場造成轟動</div>
+        <div class="news-body">孫燕姿5月台北巡演座無虛席，現場演繹多首經典名曲，粉絲淚灑全場。本次巡演橫跨亞洲多個城市，台北場被視為整輪巡演的情感高點。</div>
+        <div class="news-byline">ETtoday娛樂</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">五月天阿信北京胡同自拍引粉絲朝聖潮</div>
+        <div class="news-body">五月天主唱阿信日前於北京胡同拍攝的一組照片在社群媒體爆紅，引發大批粉絲前往同地點朝聖打卡，當地居民對潮湧而來的人潮深感困擾，事件引發正反兩極討論。</div>
+        <div class="news-byline">中時娛樂</div>
+      </div>
+    </div>
+
+    <!-- 電影 -->
+    <div class="news-column">
+      <div class="category-label">🎬 最新電影 Movies</div>
+
+      <div class="news-item">
+        <div class="news-headline">《曼達洛人與古古》登上大銀幕！Star Wars睽違七年重返院線</div>
+        <div class="news-body">由Disney出品、Jon Favreau執導，Pedro Pascal、Jeremy Allen White聯袂主演的《曼達洛人與古古》5月在台上映，是Star Wars系列電影睽違近七年再度回歸戲院，全球影迷引頸期盼，首週票房亮眼。</div>
+        <div class="news-byline">開眼電影網</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">《別離無恙》催淚上映 目黑蓮×濱邊美波感動全場</div>
+        <div class="news-body">日本人氣男星目黑蓮與新生代女神濱邊美波攜手主演的日本催淚鉅作《別離無恙》本週末上映，開映前已引發大批粉絲搶票，場場幾乎一位難求，被觀眾譽為年度最感人電影。</div>
+        <div class="news-byline">威秀影城</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">《老鷹想飛》紀錄片上映，歷時十二年拍攝熊鷹傳奇</div>
+        <div class="news-body">梁皆得導演耗費十二年光陰拍攝的紀錄片《老鷹想飛》正式上映，完整呈現熊鷹（林鵰）從幼鳥到翱翔的生命歷程，令眾多觀眾對台灣生態環境有全新的認識與感動。</div>
+        <div class="news-byline">Enjoy Movie Blog</div>
+      </div>
+    </div>
+
+  </div><!-- end news-grid -->
+</section>
+
+<!-- ============================= -->
+<!-- 🇺🇸 美國版                    -->
+<!-- ============================= -->
+<div class="section-header"><span class="flag">🇺🇸</span>美國 UNITED STATES</div>
+<section class="newspaper-section">
+  <div class="news-grid">
+
+    <!-- 科技 -->
+    <div class="news-column lead-story">
+      <div class="category-label">📡 資訊科技 Technology</div>
+
+      <div class="news-item">
+        <div class="news-headline">Anthropic首季有望獲利！估值逼近九千億美元</div>
+        <div class="news-subhead">Q2營收預測達109億美元，AI獨角獸成長驚人</div>
+        <div class="news-body">AI公司Anthropic預計在第二季首度達成季度獲利，預測營收達109億美元，營業利潤約5.59億美元。與此同時，Anthropic正接近完成新一輪鉅額融資，估值可能衝上9,000億美元，成為美國史上估值最高的AI新創公司之一。</div>
+        <div class="news-byline">Tech Startups</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">Foxconn北美廠遭Nitrogen勒索軟體攻擊，逾千萬份文件外洩</div>
+        <div class="news-body">Foxconn旗下北美工廠確認遭到Nitrogen勒索軟體集團攻擊，駭客聲稱竊取超過1,100萬份機密文件，包括客戶設計圖、內部合約等敏感資料，事件引發美國供應鏈安全廣泛關注。</div>
+        <div class="news-byline">CNBC Technology</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">Google洽談與SpaceX合作，計畫將資料中心送上太空</div>
+        <div class="news-body">Google正與SpaceX進行進階談判，探索在軌道上建置資料中心的可行性。這項計畫若成真，將是人類史上首個商業軌道資料中心，為雲端運算開拓全新的疆域。</div>
+        <div class="news-byline">Tech Startups</div>
+      </div>
+    </div>
+
+    <!-- 體育 -->
+    <div class="news-column">
+      <div class="category-label">⚾ 體育 Sports</div>
+
+      <div class="news-item">
+        <div class="news-headline">尼克有望橫掃騎士！東區決賽進入關鍵時刻</div>
+        <div class="news-body">NBA東區決賽，紐約尼克表現強勁，一路壓制克里夫蘭騎士，有機會完成四連勝橫掃晉級總冠軍賽。籃球迷屏息關注，尼克能否在主客場激戰中維持優勢令人期待。</div>
+        <div class="news-byline">ESPN</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">雷霆靠替補爆發逆轉馬刺，Shai攻下26分</div>
+        <div class="news-body">NBA西區決賽第三戰，奧克拉荷馬城雷霆在落後15:0的情況下靠Shai Gilgeous-Alexander攻下26分，加上替補席超過50年來在分區決賽的最高貢獻，成功逆轉馬刺。馬刺方面De'Aaron Fox與Dylan Harper均上場，但雷霆Jalen Williams因傷缺陣。</div>
+        <div class="news-byline">Sports Illustrated</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">今日為美國陣亡將士紀念日，球賽暫停</div>
+        <div class="news-body">5月25日為美國聯邦假日「陣亡將士紀念日」（Memorial Day），美國股市、部分職業聯賽同步停賽或調整賽程，全美各地舉行悼念活動向歷年陣亡軍人致敬。</div>
+        <div class="news-byline">ESPN</div>
+      </div>
+    </div>
+
+    <!-- 金融 -->
+    <div class="news-column">
+      <div class="category-label">💹 金融財經 Finance</div>
+
+      <div class="news-item">
+        <div class="news-headline">美股連八週收漲，陣亡將士節假期暫停交易</div>
+        <div class="news-subhead">S&P 500近五日漲0.93%，新聯準會主席Warsh就任</div>
+        <div class="news-body">美國股市今日因陣亡將士紀念日休市，此前S&P 500指數已連續八週收漲，五日漲幅達0.93%。Kevin Warsh於5月22日正式宣誓就任聯準會主席，市場對其利率政策走向密切觀察，部分分析師預期下一步為升息而非降息。</div>
+        <div class="news-byline">CNBC</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">中東戰事拖累油價，專家：汽油不再回到戰前水準</div>
+        <div class="news-body">伊朗衝突持續衝擊全球供應鏈，能源專家警告，美國國內油價在可預見的未來難以恢復戰前水準，低收入家庭面臨更大的生活壓力。長天期美國公債殖利率亦升至金融海嘯前未曾見過的高點。</div>
+        <div class="news-byline">Crestwood Advisors</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">本週焦點：Salesforce、Costco、Dell等大廠即將公布財報</div>
+        <div class="news-body">本週美股市場焦點集中於多家科技與零售巨頭的季報發布，包括Salesforce、Costco、Dell及AutoZone。同時，美國消費者信心指數與新屋銷售數據也備受華爾街關注。</div>
+        <div class="news-byline">Schwab / CNBC</div>
+      </div>
+    </div>
+
+    <!-- 娛樂 -->
+    <div class="news-column">
+      <div class="category-label">🎤 娛樂演藝 Entertainment</div>
+
+      <div class="news-item">
+        <div class="news-headline">Taylor Swift與Travis Kelce婚期將至？紐約密會引發熱議</div>
+        <div class="news-body">全球巨星Taylor Swift與NFL明星Travis Kelce在紐約一家義大利餐廳共進晚餐，舉止親密。外媒盛傳兩人婚期可能在6月13日或7月3日，確切日期尚未獲得官方證實，但粉絲與媒體已進入瘋狂倒數模式。</div>
+        <div class="news-byline">TMZ</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">Jamie Foxx（58歲）即將迎接第三胎！</div>
+        <div class="news-body">好萊塢影星Jamie Foxx與女友Alyce Huckstepp傳出懷孕喜訊，預計迎來第三個孩子。此消息於5月12日曝光，引發媒體廣泛報道。Foxx曾於2023年經歷嚴重健康危機，如今喜獲新生命令影迷倍感欣慰。</div>
+        <div class="news-byline">EURweb</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">Beyoncé巡演竊案宣判：偷走硬碟及未發行音樂</div>
+        <div class="news-body">Kelvin Evans於亞特蘭大法院就2025年Beyoncé「Cowboy Carter」巡迴演唱會期間的竊盜案認罪，所竊物品包含未發行音樂、影片素材、演出列表及多台筆記型電腦等珍貴資產。</div>
+        <div class="news-byline">Yahoo Entertainment</div>
+      </div>
+    </div>
+
+    <!-- 電影 -->
+    <div class="news-column">
+      <div class="category-label">🎬 最新電影 Movies</div>
+
+      <div class="news-item">
+        <div class="news-headline">《惡魔穿著Prada 2》回歸！Meryl Streep、Anne Hathaway雙強重聚</div>
+        <div class="news-subhead">Disney五月最強話題片，睽違二十年的時尚傳奇續集</div>
+        <div class="news-body">Disney出品的《惡魔穿著Prada 2》正式上映，Meryl Streep再次詮釋時尚女魔頭Miranda Priestly，Anne Hathaway回歸飾演Andy Sachs。睽違二十年的續集未演先轟動，首週票房與《曼達洛人與古古》並列五月最強冠軍爭奪戰。</div>
+        <div class="news-byline">Boxoffice Pro</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">《曼達洛人與古古》全球票房告捷，Pedro Pascal魅力依舊</div>
+        <div class="news-body">由Pedro Pascal主演的《曼達洛人與古古》上映即創下Disney Star Wars系列新近最佳開片紀錄。本片由Jon Favreau執導，Jeremy Allen White及Sigourney Weaver加盟演出，粉絲好評如潮。</div>
+        <div class="news-byline">Box Office Mojo</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">恐怖新作《後室》（Backrooms）挑戰觀眾神經</div>
+        <div class="news-body">改編自網路都市傳說的恐怖電影《後室》（Backrooms）由A24出品，以緊繃的氣氛和顛覆現實邏輯的空間設定挑戰觀眾的感官極限，上映後口碑兩極，話題持續延燒。</div>
+        <div class="news-byline">Movie Insider</div>
+      </div>
+    </div>
+
+  </div><!-- end news-grid -->
+</section>
+
+<!-- ============================= -->
+<!-- 🇯🇵 日本版                    -->
+<!-- ============================= -->
+<div class="section-header"><span class="flag">🇯🇵</span>日本 JAPAN</div>
+<section class="newspaper-section">
+  <div class="news-grid">
+
+    <!-- 科技 -->
+    <div class="news-column lead-story">
+      <div class="category-label">📡 資訊科技 Technology</div>
+
+      <div class="news-item">
+        <div class="news-headline">日本政府全面部署Gennai生成式AI，18萬名公務員將使用</div>
+        <div class="news-subhead">黃金週後正式上線，39個部會同步導入</div>
+        <div class="news-body">日本政府於黃金週假期後正式啟動「Gennai」生成式AI平台的大規模試行計畫，覆蓋39個政府機關、約18萬名公務人員。此為日本迄今規模最大的政府AI導入行動，目標是大幅提升行政效率、縮短文件處理時間。</div>
+        <div class="news-byline">The Japan Times</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">Microsoft宣布四年100億美元投資日本，培訓百萬工程師</div>
+        <div class="news-body">Microsoft宣布2026至2029年間在日本投入100億美元，計畫擴建AI資料中心、與軟銀及Sakura Internet合作、深化與日本政府的資安合作，並承諾到2030年培訓逾100萬名工程師與開發者。</div>
+        <div class="news-byline">Nikkei Asia</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">日本提出AI與區塊鏈金融國家戰略，自民黨發布建議書</div>
+        <div class="news-body">日本執政黨自民黨於5月19日發布政策建議書，呼籲將日本打造成全球AI驅動鏈上金融（On-chain Finance）、穩定幣及可程式支付的核心樞紐，以應對數位金融全球化競爭。</div>
+        <div class="news-byline">Crypto Times</div>
+      </div>
+    </div>
+
+    <!-- 體育 -->
+    <div class="news-column">
+      <div class="category-label">⚾ 體育 Sports</div>
+
+      <div class="news-item">
+        <div class="news-headline">大谷翔平連續53場出塁！打破亞洲人大聯盟紀錄</div>
+        <div class="news-body">洛杉磯道奇隊指定打擊大谷翔平創下連續53場出壘的驚人紀錄，超越前亞洲人紀錄的52場。今季大谷打擊率.272、OPS達0.885，以二刀流身份持續稱霸大聯盟，再度展現超凡球技與耐力。</div>
+        <div class="news-byline">ABEMA TIMES / Baseball Channel</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">佐佐木朗希七局失一分，助道奇橫掃天使</div>
+        <div class="news-body">另一位旅美投手佐佐木朗希繳出7局僅失1分、三振8人的優質先發，率領道奇以10:1橫掃洛杉磯天使，完成主客場對決系列賽全勝。佐佐木本季先發表現趨於穩定，愈戰愈勇。</div>
+        <div class="news-byline">The Japan Times</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">NPB本週賽事：巨人戰鷹、阪神戰火腿、橫濱戰歐力士</div>
+        <div class="news-body">日本職棒（NPB）5月26日起迎來週中精彩對決：讀賣巨人對福岡軟銀鷹、阪神虎對日本火腿鬥士、橫濱DeNA海灣星對歐力士水牛，各路強隊爭奪上半季優勢，賽事精彩可期。</div>
+        <div class="news-byline">Oddspedia NPB</div>
+      </div>
+    </div>
+
+    <!-- 金融 -->
+    <div class="news-column">
+      <div class="category-label">💹 金融財經 Finance</div>
+
+      <div class="news-item">
+        <div class="news-headline">日本上市企業獲利創歷史新高！AI需求推升純益9%</div>
+        <div class="news-subhead">東京股市迭創高點，半導體與AI族群領漲</div>
+        <div class="news-body">日本上市企業在2026年3月期財報季繳出亮眼成績，AI需求帶動純利益年增9%，整體獲利創歷史新高。東京股市持續刷新高點，半導體、AI基礎設施等科技族群為最大功臣，市場信心高漲。</div>
+        <div class="news-byline">日本金融市場レポート / 日経新聞</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">日銀維持基準利率0.75%不變，密切關注通膨走勢</div>
+        <div class="news-body">日本銀行在4月例行政策會議上決定維持基準利率0.75%，央行官員強調將持續觀察通膨是否穩定向2%收斂，並指出中東局勢帶來的能源價格上漲是主要下行風險。</div>
+        <div class="news-byline">三菱總合研究所 MRI</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">政府計畫夏季電費補貼每月逾千圓，編列5,000億日圓</div>
+        <div class="news-body">日本政府計畫在2026年夏季推出電費補貼措施，每戶每月可獲超過1,000日圓補貼，包含瓦斯費在內共動用備用資金5,000億日圓，以緩解物價上漲對家庭的衝擊。</div>
+        <div class="news-byline">財務省 / 第一生命経済研究所</div>
+      </div>
+    </div>
+
+    <!-- 娛樂 -->
+    <div class="news-column">
+      <div class="category-label">🎤 娛樂演藝 Entertainment</div>
+
+      <div class="news-item">
+        <div class="news-headline">岡本多緒坎城奪影后！史上首位獲獎日本女演員</div>
+        <div class="news-subhead">濱口竜介新作《Suddenly, I Feel Sick》摘下最高榮譽</div>
+        <div class="news-body">日本女演員岡本多緒（Tao Okamoto）以濱口竜介執導的新片《Suddenly, I Feel Sick》在坎城影展奪下最佳女主角獎，並與法國女星Virginie Efira並列獲獎。岡本多緒成為史上首位獲得坎城影后殊榮的日本演員，消息傳回日本引發熱烈慶賀。</div>
+        <div class="news-byline">News On Japan / The Japan Times</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">X JAPAN吉他手YOSHIKI獲頒美國演藝界最高榮譽獎章</div>
+        <div class="news-body">搖滾樂隊X JAPAN靈魂人物YOSHIKI將獲頒「Entertainment Community Fund」最高榮譽「Medal of Honor」，表彰他對美國演藝公益事業的長期貢獻。此獎章為美國演藝界最高殊榮之一，日本樂迷與業界齊聲祝賀。</div>
+        <div class="news-byline">J-Generation</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">廣末涼子舉辦「Best Day Ever」生日演唱會，7月東京登場</div>
+        <div class="news-body">女演員兼歌手廣末涼子宣布將於7月18至25日在東京丸之內棉花俱樂部（Cotton Club）舉辦生日特別演唱會「Best Day Ever ~ Crescent River」，連演三天，預售票發售後迅速告罄。</div>
+        <div class="news-byline">Tokyo Hive</div>
+      </div>
+    </div>
+
+    <!-- 電影 -->
+    <div class="news-column">
+      <div class="category-label">🎬 最新電影 Movies</div>
+
+      <div class="news-item">
+        <div class="news-headline">《Rhapsody, Rhapsody》五月開映，五島遼聯合奇葩妻子搞笑登場</div>
+        <div class="news-body">由五島遼（Issey Takahashi）主演的日本新喜劇片《Rhapsody, Rhapsody》5月1日正式公映，導演Go Riju描繪一名男子驚覺自己已不知情地結婚六個月的荒誕歷程，幽默與溫情並重，上映後獲得正面評價。</div>
+        <div class="news-byline">Metropolis Japan / Tokyo Weekender</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">《Kingdom V》夏季上映，歷史鉅作再掀熱潮</div>
+        <div class="news-body">改編自同名熱門漫畫的《Kingdom》系列電影第五集預計於今夏正式上映，自公布消息以來票房預售表現強勁，被認為是年度最受期待的日本國產電影之一，製作規模較前作更加壯大。</div>
+        <div class="news-byline">CDJapan / List of Japanese films of 2026</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-headline">Netflix宣布四部2026日本原創影集，《Viral Hit》等備受矚目</div>
+        <div class="news-body">Netflix宣布推出四部2026年日本原創作品，包括《Viral Hit》（爆紅打擊）、《One Year to Live, Buy a Man》（買個男人度餘年）、《Doors Closed, Bids Open》及《Sparks of Tomorrow》，題材多元創新，鎖定全球日劇迷。</div>
+        <div class="news-byline">Netflix / Yatta-Tachi</div>
+      </div>
+    </div>
+
+  </div><!-- end news-grid -->
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p>由 Claude AI 自動整理 · 每日更新 &nbsp;|&nbsp; Automatically curated by Claude AI · Updated Daily</p>
+  <p style="margin-top:4px;font-size:0.7rem;opacity:0.7;">© 2026 每日新聞 Daily News &nbsp;·&nbsp; 新聞內容來自各大媒體，僅供參考 &nbsp;·&nbsp; 2026年5月25日</p>
+</footer>
+
+</body>
+</html>
