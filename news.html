@@ -3,560 +3,1000 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日新聞 Daily News — 2026年5月26日</title>
+<title>每日新聞 Daily News — 2026年5月27日</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     background: #f5f0e8;
-    font-family: 'Georgia', 'Times New Roman', '新細明體', '標楷體', serif;
+    font-family: 'Georgia', 'Times New Roman', '細明體', 'PMingLiU', serif;
     color: #1a1a1a;
-    font-size: 15px;
-    line-height: 1.55;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
-  /* ── 報頭 ── */
+  /* ===== MASTHEAD ===== */
   .masthead {
-    border-bottom: 4px double #1a1a1a;
-    text-align: center;
-    padding: 18px 12px 10px;
     background: #fff;
+    border-bottom: 4px double #1a1a1a;
+    border-top: 4px double #1a1a1a;
+    text-align: center;
+    padding: 12px 20px 8px;
   }
-  .masthead .vol-line {
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
     color: #555;
-    margin-bottom: 4px;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
   }
   .masthead h1 {
-    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-size: 52px;
     font-weight: 900;
-    letter-spacing: 0.06em;
-    line-height: 1.1;
-    color: #000;
-  }
-  .masthead .sub-title {
-    font-size: clamp(0.8rem, 2.5vw, 1.1rem);
     letter-spacing: 4px;
+    font-family: 'Georgia', serif;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .masthead .subtitle {
+    font-size: 13px;
+    letter-spacing: 6px;
     color: #333;
-    margin-top: 4px;
+    margin-top: 2px;
+    border-top: 1px solid #aaa;
+    padding-top: 4px;
+    margin-top: 6px;
   }
-  .masthead .date-line {
-    border-top: 1px solid #888;
-    border-bottom: 1px solid #888;
-    margin: 8px auto;
-    max-width: 700px;
-    padding: 3px 0;
+  .masthead-date {
     font-size: 12px;
-    letter-spacing: 1px;
-    color: #444;
-  }
-  .masthead .tagline {
-    font-style: italic;
-    font-size: 12px;
-    color: #666;
+    color: #555;
     margin-top: 4px;
   }
 
-  /* ── 地區標題 ── */
-  .region-header {
+  /* ===== SECTION HEADERS ===== */
+  .section-header {
     background: #1a1a1a;
     color: #fff;
     text-align: center;
-    padding: 6px 12px;
-    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-size: 18px;
+    font-weight: bold;
     letter-spacing: 4px;
-    font-weight: 700;
-    margin-top: 18px;
-  }
-
-  /* ── 版塊容器 ── */
-  .region-block {
-    background: #fff;
-    border: 1px solid #ccc;
-    margin: 0 8px 8px;
-  }
-
-  /* ── 新聞欄位 grid ── */
-  .news-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-  }
-
-  .news-col {
-    border-right: 1px solid #ccc;
-    padding: 10px 12px;
-  }
-  .news-col:last-child { border-right: none; }
-
-  /* ── 類別標題 ── */
-  .cat-title {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    padding: 6px 20px;
+    margin: 16px 0 0 0;
     text-transform: uppercase;
-    border-top: 3px solid #1a1a1a;
-    border-bottom: 1px solid #ccc;
-    padding: 4px 0;
-    margin-bottom: 8px;
-    color: #222;
+  }
+  .section-header .flag-icon {
+    font-size: 20px;
+    margin-right: 8px;
   }
 
-  /* ── 單則新聞 ── */
-  .article { margin-bottom: 14px; }
+  /* ===== CATEGORY BANDS ===== */
+  .cat-band {
+    background: #f0ece0;
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 1px solid #999;
+    padding: 3px 16px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #333;
+  }
 
-  .article h3 {
-    font-size: 14px;
-    font-weight: 700;
+  /* ===== NEWSPAPER COLUMNS ===== */
+  .columns {
+    display: grid;
+    gap: 0;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+  .columns-2 { grid-template-columns: 1fr 1fr; }
+  .columns-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+  .col {
+    padding: 10px 14px;
+    border-right: 1px solid #ccc;
+  }
+  .col:last-child { border-right: none; }
+
+  /* ===== ARTICLE ===== */
+  .article { margin-bottom: 12px; }
+  .article + .article {
+    border-top: 1px dotted #bbb;
+    padding-top: 10px;
+  }
+  .article-headline {
+    font-size: 15px;
+    font-weight: bold;
     line-height: 1.3;
     margin-bottom: 4px;
     color: #111;
   }
-  .article h3 a {
-    color: inherit;
+  .article-headline a {
+    color: #111;
     text-decoration: none;
   }
-  .article h3 a:hover { text-decoration: underline; }
-
-  .article p {
-    font-size: 12px;
-    line-height: 1.5;
-    color: #333;
-    margin-bottom: 3px;
+  .article-headline a:hover {
+    text-decoration: underline;
   }
-  .article .byline {
+  .article-meta {
+    font-size: 10px;
+    color: #777;
+    margin-bottom: 4px;
+    font-family: 'Arial', sans-serif;
+  }
+  .article-date {
+    display: inline-block;
+    background: #f0ece0;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 0 4px;
+    font-size: 10px;
+    color: #555;
+    margin-right: 4px;
+    font-family: 'Arial', sans-serif;
+  }
+  .article-date.stale {
+    color: #c44;
+    border-color: #c44;
+  }
+  .article-body {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #222;
+    text-align: justify;
+  }
+  .article-byline {
     font-size: 10px;
     color: #888;
-    letter-spacing: 1px;
     font-style: italic;
-    border-top: 1px solid #e0e0e0;
-    padding-top: 3px;
-    margin-top: 4px;
+    margin-top: 3px;
+    font-family: 'Arial', sans-serif;
   }
 
-  /* ── 頁腳 ── */
-  footer {
+  /* ===== DIVIDER RULES ===== */
+  .hrule {
+    border: none;
+    border-top: 1px solid #bbb;
+    margin: 8px 0;
+  }
+  .hrule-thick {
+    border: none;
+    border-top: 2px solid #555;
+    margin: 6px 0;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: #1a1a1a;
+    color: #ccc;
     text-align: center;
-    border-top: 3px double #1a1a1a;
-    padding: 12px 8px;
-    margin-top: 18px;
+    padding: 10px 20px;
     font-size: 11px;
     letter-spacing: 1px;
-    color: #555;
-    background: #fff;
+    margin-top: 16px;
+    font-family: 'Arial', sans-serif;
   }
 
-  /* ── RWD ── */
-  @media (max-width: 900px) {
-    .news-grid { grid-template-columns: repeat(3, 1fr); }
+  /* ===== RWD ===== */
+  @media (max-width: 768px) {
+    .masthead h1 { font-size: 32px; letter-spacing: 2px; }
+    .columns-2, .columns-3 { grid-template-columns: 1fr; }
+    .col { border-right: none; border-bottom: 1px solid #ddd; }
+    .masthead-top { flex-direction: column; gap: 4px; }
   }
-  @media (max-width: 600px) {
-    .news-grid { grid-template-columns: 1fr 1fr; }
-    .region-block { margin: 0 4px 6px; }
+  @media (max-width: 480px) {
+    .masthead h1 { font-size: 24px; }
+    body { font-size: 13px; }
   }
-  @media (max-width: 400px) {
-    .news-grid { grid-template-columns: 1fr; }
-    .news-col { border-right: none; border-bottom: 1px solid #ccc; }
-    .news-col:last-child { border-bottom: none; }
+
+  /* ===== FULL SECTION WRAPPER ===== */
+  .section-wrapper {
+    margin-bottom: 0;
+    border: 1px solid #bbb;
+    border-top: none;
+    margin: 0 8px 16px 8px;
+  }
+  .lead-article .article-headline {
+    font-size: 20px;
+  }
+  .lead-article .article-body {
+    font-size: 14px;
   }
 </style>
 </head>
 <body>
 
-<!-- ══ 報頭 ══ -->
-<header class="masthead">
-  <div class="vol-line">VOL. MMXXVI &nbsp;|&nbsp; 獨立報業 &nbsp;|&nbsp; AI EDITION</div>
-  <h1>每日新聞</h1>
-  <div class="sub-title">DAILY&nbsp;NEWS</div>
-  <div class="date-line">二〇二六年五月二十六日（星期二）&nbsp;&nbsp;｜&nbsp;&nbsp;Tuesday, May 26, 2026</div>
-  <div class="tagline">"世界在變，新聞記錄一切" &mdash; All the news that matters, every day.</div>
-</header>
+<!-- ===== MASTHEAD ===== -->
+<div class="masthead">
+  <div class="masthead-top">
+    <span>由 Claude AI 自動整理</span>
+    <span>每日更新 · 國際版</span>
+    <span>每份售價：NT$ 15</span>
+  </div>
+  <h1>每日新聞 Daily News</h1>
+  <div class="subtitle">台灣 · 美國 · 日本 三地要聞</div>
+  <div class="masthead-date">中華民國一一五年五月二十七日（星期三）· 西元 2026 年 5 月 27 日</div>
+</div>
 
-<!-- ══════════════════════════════════════════
-     台 灣 版
-══════════════════════════════════════════ -->
-<div class="region-header">🇹🇼 &nbsp;台&nbsp;灣&nbsp;&nbsp;TAIWAN</div>
-<div class="region-block">
-  <div class="news-grid">
 
-    <!-- 科技 -->
-    <div class="news-col">
-      <div class="cat-title">資訊科技 · IT / Tech</div>
+<!-- ============================================================ -->
+<!-- 台灣版 TAIWAN                                                 -->
+<!-- ============================================================ -->
+<div class="section-header"><span class="flag-icon">🇹🇼</span>台灣要聞 TAIWAN</div>
 
+<div class="section-wrapper">
+
+  <!-- 科技 -->
+  <div class="cat-band">▌資訊科技 IT / TECHNOLOGY</div>
+  <div class="columns columns-2">
+    <div class="col lead-article">
       <div class="article">
-        <h3><a href="https://www.digitimes.com/news/a20260521PD216/taiwan-humanoid-robot-software-hardware-2026.html">黃仁勳訪台，輝達北投總部預計5月27日動土</a></h3>
-        <p>輝達（Nvidia）執行長黃仁勳抵台，行程包括拜會台積電主席魏哲家。台北北投士林科技園區的輝達新台灣總部預計於5月27日正式動土，象徵AI時代台美科技深度連結的里程碑。</p>
-        <div class="byline">來源：Digitimes</div>
+        <div class="article-headline">
+          <a href="https://technews.tw/" target="_blank">思特威聯手紫光展銳 攻Micro LED高速光互連</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：科技新報
+        </div>
+        <div class="article-body">
+          思特威於5月26日宣布，與中國本土IC設計業者紫光展銳達成策略合作協議，雙方將共同投入Micro LED高速光互連技術開發，鎖定AI算力叢集、智慧汽車及工業視覺等高成長應用市場，預計此合作將強化思特威在下一世代感測技術領域的競爭地位。
+        </div>
+        <div class="article-byline">綜合報導 / 科技新報</div>
       </div>
-
       <div class="article">
-        <h3><a href="https://www.digitimes.com/news/a20260521PD216/taiwan-humanoid-robot-software-hardware-2026.html">台灣搶攻人形機器人關節模組市場</a></h3>
-        <p>AI驅動的人形機器人進入商業化可見階段，軟體研發仍落後硬體，為台灣零組件供應商提供透過聯盟合作搶攻關節模組市場的戰略機會。台廠積極布局此一次世代產業。</p>
-        <div class="byline">來源：Digitimes Tech Forum 2026</div>
-      </div>
-
-      <div class="article">
-        <h3>台灣資安警示：726件機關事件</h3>
-        <p>台灣政府通報726起資安事件，五大資安風險包括偽造通訊軟體、勒索病毒及供應鏈弱點。政府呼籲各機關強化零信任架構以應對日益複雜的網路威脅環境。</p>
-        <div class="byline">來源：Focus Taiwan</div>
-      </div>
-    </div>
-
-    <!-- 體育 -->
-    <div class="news-col">
-      <div class="cat-title">體育 · Sports</div>
-
-      <div class="article">
-        <h3>王捷齡亞洲跆拳道錦標賽奪金</h3>
-        <p>台灣選手王捷齡在烏蘭巴托舉行的亞洲跆拳道錦標賽女子46公斤量級決賽中，以4比2、6比3力克泰國選手摘得金牌，是台灣此次錦標賽最亮眼的表現。</p>
-        <div class="byline">來源：Taipei Times</div>
-      </div>
-
-      <div class="article">
-        <h3><a href="https://www.taipeitimes.com/News/sport/archives/2026/05/24/2003857872">鄧愷威先發5局零失分，太空人大勝</a></h3>
-        <p>旅美投手鄧愷威本季以先發身分取得第二勝，對休士頓德州遊騎兵先發5局未失分，助太空人在Daikin Park以4比1獲勝，展現穩健的先發實力。</p>
-        <div class="byline">來源：Taipei Times</div>
-      </div>
-
-      <div class="article">
-        <h3>陳文慧舉重亞錦賽三銀牌、破二全國紀錄</h3>
-        <p>舉重好手陳文慧在印度甘地納加爾亞洲舉重錦標賽69公斤級賽事中，贏得三面銀牌並打破兩項全國紀錄，為台灣爭光。</p>
-        <div class="byline">來源：Focus Taiwan</div>
+        <div class="article-headline">
+          <a href="https://www.technice.com.tw/" target="_blank">雷虎科技攜手義隆電 邁向AI導控技術新里程</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：科技島
+        </div>
+        <div class="article-body">
+          雷虎科技於5月26日宣布與義隆電子簽署合作備忘錄，標誌著雷虎從無人載具系統整合商，進化為與台灣頂尖晶片大廠共同開發AI導控、影像辨識與通訊核心技術的深度技術夥伴，雙方合作將推動台灣無人機生態系向高附加價值轉型。
+        </div>
+        <div class="article-byline">綜合報導 / 科技島</div>
       </div>
     </div>
-
-    <!-- 金融 -->
-    <div class="news-col">
-      <div class="cat-title">金融財經 · Finance</div>
-
+    <div class="col">
       <div class="article">
-        <h3><a href="https://www.japantimes.co.jp/news/2026/05/01/asia-pacific/taiwan-economic-growth-beat-forecasts/">台灣Q1 GDP成長13.7%，創39年新高</a></h3>
-        <p>台灣2026年第一季GDP年增率高達13.7%，遠超彭博調查分析師預估的11.3%，創下近39年來最快增速。AI相關出口需求強勁是主要推動力，電子零組件及資通訊產品出口大增51.12%。</p>
-        <div class="byline">來源：Japan Times / Bloomberg</div>
+        <div class="article-headline">
+          <a href="https://www.computex.biz/" target="_blank">COMPUTEX 2026六月登場 市值超10兆美元企業雲集</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/25</span>
+          來源：中央社
+        </div>
+        <div class="article-body">
+          台北國際電腦展（COMPUTEX 2026）將於6月2日盛大開幕，高通、英特爾等四家公司執行長，以及近30家企業高階主管將蒞臨發表演講，與會公司合計市值規模超過10兆美元，全球科技業屆時將聚焦台北。
+        </div>
+        <div class="article-byline">綜合報導 / 中央社</div>
       </div>
-
       <div class="article">
-        <h3><a href="https://www.bloomberg.com/news/articles/2026-05-24/taiwan-urges-630-billion-asset-management-industry-to-scale-up">台股市值突破4.14兆美元，躍居全球第七</a></h3>
-        <p>台灣證交所上市公司總市值突破4.14兆美元，在4月份超越英國成為全球第七大股票市場。台灣6300億美元資產管理業也被要求擴大規模、發揮科技業優勢。</p>
-        <div class="byline">來源：Bloomberg</div>
-      </div>
-
-      <div class="article">
-        <h3>央行維持利率，警示通膨風險</h3>
-        <p>台灣中央銀行理監事全體同意維持基準利率不變，認為國內通膨穩定且經濟成長強勁。但部分決策者警告，若地緣政治緊張局勢持續，油價長期高漲恐波及整體通膨。</p>
-        <div class="byline">來源：Taipei Times</div>
-      </div>
-    </div>
-
-    <!-- 娛樂 -->
-    <div class="news-col">
-      <div class="cat-title">娛樂演藝 · Entertainment</div>
-
-      <div class="article">
-        <h3>孫燕姿《就在日落以後》巡演台北場盛大登場</h3>
-        <p>孫燕姿《就在日落以後》巡迴演唱會台北場於5月15日及17日在台北大巨蛋舉行，歌迷熱情相挺。多首經典金曲引發全場大合唱，被譽為年度最感人演唱會之一。</p>
-        <div class="byline">來源：商業週刊 / 遠見雜誌</div>
-      </div>
-
-      <div class="article">
-        <h3>EXO台北小巨蛋《EXhOrizon》演唱會圓滿落幕</h3>
-        <p>韓流天團EXO於5月9日至10日在台北小巨蛋舉行「PLANET #6 - EXhOrizon」演唱會，粉絲熱情爆棚，演出視覺效果震撼，二場演出全數售罄。</p>
-        <div class="byline">來源：噓！星聞 / UDN</div>
-      </div>
-
-      <div class="article">
-        <h3>動力火車世界巡演台北場五月登小巨蛋</h3>
-        <p>動力火車「一路向前」世界巡迴演唱會台北旗艦場5月15日至17日連三場於台北小巨蛋舉行，情感深厚的演出讓老中青三代歌迷同聲落淚、感動不已。</p>
-        <div class="byline">來源：商業週刊</div>
+        <div class="article-headline">
+          <a href="https://www.ithome.com.tw/" target="_blank">尖點私募可轉債獲批 欣興等三大廠入股</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：iThome
+        </div>
+        <div class="article-body">
+          尖點於5月26日股東常會正式通過私募無擔保可轉換公司債案，發行總面額上限新台幣6億元，欣興、金像電、臻鼎三大廠商參與投資，為公司注入新的資本動能。
+        </div>
+        <div class="article-byline">綜合報導 / iThome</div>
       </div>
     </div>
+  </div>
 
-    <!-- 電影 -->
-    <div class="news-col">
-      <div class="cat-title">最新電影 · Movies</div>
-
+  <!-- 體育 -->
+  <div class="cat-band">▌體育 SPORTS</div>
+  <div class="columns columns-3">
+    <div class="col">
       <div class="article">
-        <h3><a href="https://blog.enjoymovie.net/tw-cinema-may-2026-releases/">《寒戰1994》港警匪前傳登台</a></h3>
-        <p>港產警匪系列前傳《寒戰1994》正式在台上映，本片回溯1994年代香港警界風雲，演員陣容堅強，動作場面激烈，上映首週票房亮眼，口碑兩極化引話題。</p>
-        <div class="byline">來源：Enjoy Movie Blog</div>
-      </div>
-
-      <div class="article">
-        <h3>《真人快打II》電玩改編續集強勢上映</h3>
-        <p>好萊塢動作鉅作《真人快打II》（Mortal Kombat II）接續2021年前作登台，格鬥場面更為壯觀。本片原定2025年10月上映，因預告反應熱烈提前至2026年5月公映。</p>
-        <div class="byline">來源：Boxoffice Pro</div>
-      </div>
-
-      <div class="article">
-        <h3>碧梨3D演唱會電影《怪奇比莉》台灣上映</h3>
-        <p>歌手碧梨（Billie Eilish）與名導詹姆斯·卡麥隆合作的3D演唱會電影《怪奇比莉 溫柔重擊巡迴演唱會》在台上映，沉浸式視聽體驗引發大批樂迷爭相搶票入場。</p>
-        <div class="byline">來源：Enjoy Movie Blog</div>
+        <div class="article-headline">
+          <a href="https://focustaiwan.tw/sports" target="_blank">鄧凱威太空人先發 5局零失分摘第2勝</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/25</span>
+          來源：Focus Taiwan
+        </div>
+        <div class="article-body">
+          台灣旅美投手鄧凱威本季以先發登板，主投5局零失分，帶領休士頓太空人以4比1擊敗德州遊騎兵，摘下本季第2勝。鄧凱威展現優異控球，成為台灣棒球之光。
+        </div>
+        <div class="article-byline">Focus Taiwan</div>
       </div>
     </div>
-
-  </div><!-- .news-grid -->
-</div><!-- .region-block -->
-
-
-<!-- ══════════════════════════════════════════
-     美 國 版
-══════════════════════════════════════════ -->
-<div class="region-header">🇺🇸 &nbsp;美&nbsp;國&nbsp;&nbsp;UNITED STATES</div>
-<div class="region-block">
-  <div class="news-grid">
-
-    <!-- 科技 -->
-    <div class="news-col">
-      <div class="cat-title">資訊科技 · IT / Tech</div>
-
+    <div class="col">
       <div class="article">
-        <h3>Meta與Broadcom攜手在UCLA建1.25億美元半導體研究中心</h3>
-        <p>Meta、Broadcom等科技巨頭宣布在加州大學洛杉磯分校（UCLA）聯合成立1.25億美元半導體研究中心，致力推動下一代晶片設計與AI硬體創新，強化美國半導體自主研發能量。</p>
-        <div class="byline">來源：TechCrunch</div>
-      </div>
-
-      <div class="article">
-        <h3>SpaceX星艦第二次試飛成功</h3>
-        <p>SpaceX完成星艦（Starship）第二次試射，重型運載火箭順利升空並完成既定測試目標，為馬斯克太空移民願景再邁一步。SpaceX即將進行的巨型IPO吸引市場高度關注。</p>
-        <div class="byline">來源：CNBC</div>
-      </div>
-
-      <div class="article">
-        <h3>Anthropic與Microsoft洽談AI晶片新協議</h3>
-        <p>繼Microsoft宣布對Anthropic投資50億美元後，雙方正就AI專用晶片合作展開新一輪談判。此外，川普政府就AI行政命令的簽署表示仍有保留，稱「對某些條款不滿意」。</p>
-        <div class="byline">來源：CNBC / GeekWire</div>
+        <div class="article-headline">
+          <a href="https://www.taipeitimes.com/News/sport" target="_blank">王婕凌亞錦賽46公斤奪金 台灣跆拳揚威蒙古</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/24</span>
+          來源：Taipei Times
+        </div>
+        <div class="article-body">
+          台灣跆拳道選手王婕凌在烏蘭巴托舉行的亞洲跆拳道錦標賽，於女子46公斤級以4比2、6比3決賽擊敗泰國對手，奪得金牌，為台灣首次踏上這個量級的最高頒獎台。
+        </div>
+        <div class="article-byline">Taipei Times</div>
       </div>
     </div>
-
-    <!-- 體育 -->
-    <div class="news-col">
-      <div class="cat-title">體育 · Sports</div>
-
+    <div class="col">
       <div class="article">
-        <h3><a href="https://sports.yahoo.com/articles/nba-games-tv-today-full-043002367.html">NBA季後賽西區決賽：文班亞馬G4攻33分</a></h3>
-        <p>聖安東尼奧馬刺年輕中鋒文班亞馬（Victor Wembanyama）在西區決賽G4砍下全場最高33分，包含一記驚艷半場投籃，雷霆與馬刺系列賽緊張熱烈，引爆全美球迷熱議。</p>
-        <div class="byline">來源：Yahoo Sports / ESPN</div>
-      </div>
-
-      <div class="article">
-        <h3>東區決賽：尼克以全季最強姿態迎戰騎士</h3>
-        <p>紐約尼克隊攜帶主場優勢迎戰克里夫蘭騎士，尼克成為史上第十支連贏10場季後賽的隊伍，且連勝場均分差為史上最大，全美東岸球迷寄予厚望。</p>
-        <div class="byline">來源：ESPN</div>
-      </div>
-
-      <div class="article">
-        <h3>馬林魚滿壘全壘打逆轉大都會</h3>
-        <p>邁阿密馬林魚Heriberto Hernandez在比賽尾聲擊出再見滿壘全壘打，以4比0擊敗紐約大都會，成為本週MLB賽季最精彩的逆轉時刻，震驚棒球界。</p>
-        <div class="byline">來源：ESPN</div>
+        <div class="article-headline">
+          <a href="https://focustaiwan.tw/sports" target="_blank">桌球世錦賽台灣男隊奪銅 準決賽0比3敗日本</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/22</span>
+          來源：Focus Taiwan
+        </div>
+        <div class="article-body">
+          台灣男子桌球隊在英國倫敦舉行的國際桌球總會世界團體錦標賽，準決賽以0比3不敵日本隊，最終獲得季軍銅牌。這是台灣男子桌球在世錦賽的最佳成績之一。
+        </div>
+        <div class="article-byline">Focus Taiwan</div>
       </div>
     </div>
+  </div>
 
-    <!-- 金融 -->
-    <div class="news-col">
-      <div class="cat-title">金融財經 · Finance</div>
-
+  <!-- 金融 -->
+  <div class="cat-band">▌金融財經 FINANCE</div>
+  <div class="columns columns-2">
+    <div class="col lead-article">
       <div class="article">
-        <h3><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-may-21-2026">道瓊創歷史新高，收50,579點</a></h3>
-        <p>美國股市近期強勢上漲，道瓊工業平均指數收盤於50,579.70點，創歷史新高；S&P 500收7,473.47點，那斯達克收26,343.97點。今日適逢紀念日假日後首個交易日，投資人關注消費者信心數據。</p>
-        <div class="byline">來源：TheStreet / Schwab</div>
-      </div>
-
-      <div class="article">
-        <h3>Kevin Warsh宣誓就任聯準會主席</h3>
-        <p>川普總統主持儀式，Kevin Warsh宣誓就任聯邦準備理事會（Fed）主席，接掌這個必須在複雜經濟環境與政治壓力間拿捏平衡的關鍵職位，市場密切關注其未來利率政策走向。</p>
-        <div class="byline">來源：Schwab Market Update</div>
-      </div>
-
-      <div class="article">
-        <h3>美伊談判動向左右市場情緒</h3>
-        <p>一份卡達斡旋美伊接近達成停戰協議的虛假報告曾短暫推升股市，後經澄清，整體市場情緒仍謹慎樂觀。分析師指出，若美伊局勢緩解將有利於油價下行。</p>
-        <div class="byline">來源：CNBC / Reuters</div>
+        <div class="article-headline">
+          <a href="https://money.udn.com/rank/newest/1001" target="_blank">台股加權指數突破4萬點 創歷史新高40,705點</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：經濟日報
+        </div>
+        <div class="article-body">
+          台股加權指數收盤站上4萬點大關，來到40,705.14點歷史新高。台積電、聯發科等權值股近期強勢上攻，AI與半導體產業持續引領多頭行情，市場信心十足。外資持續買超，主力集中在科技族群，分析師指出短期仍有上攻動能。
+        </div>
+        <div class="article-byline">綜合報導 / 經濟日報</div>
       </div>
     </div>
-
-    <!-- 娛樂 -->
-    <div class="news-col">
-      <div class="cat-title">娛樂演藝 · Entertainment</div>
-
+    <div class="col">
       <div class="article">
-        <h3>Taylor Swift與Kelce婚期曝光？粉絲瘋傳6或7月大婚</h3>
-        <p>美國流行天后泰勒絲（Taylor Swift）與NFL球星Travis Kelce的婚訊持續延燒，部分消息指婚禮定於6月13日，另有說法是7月3日。喜帖規定引發部分受邀賓客不滿，引發話題。</p>
-        <div class="byline">來源：Hollywood Life / TMZ</div>
+        <div class="article-headline">
+          <a href="https://tw.stock.yahoo.com/" target="_blank">台積電季配息升至每股7元 調高幅度超預期</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/12</span>
+          來源：Yahoo財經
+        </div>
+        <div class="article-body">
+          台積電董事會通過調高2026年首季季配息至每股新台幣7元，較先前金額提升，超越市場預期。這是台積電連續多季提高配息的延續，充分展現其強勁的現金流獲利能力。
+        </div>
+        <div class="article-byline">Yahoo財經</div>
       </div>
-
       <div class="article">
-        <h3>Rob Base病逝，享年59歲</h3>
-        <p>經典嘻哈歌曲《It Takes Two》演唱者Rob Base在生日後四天靜靜辭世，享年59歲，家人陪伴左右。這首1988年的作品至今仍是全球廣為人知的派對anthem，樂壇同聲惋惜。</p>
-        <div class="byline">來源：TMZ / E! Online</div>
-      </div>
-
-      <div class="article">
-        <h3>《Euphoria》第三季高潮迭起，5月24日播出衝擊劇情</h3>
-        <p>HBO影集《Euphoria》第三季倒數第二集於5月24日播出，以震驚觀眾的暴力死亡場景收尾，引發社群媒體熱烈討論。美國音樂獎提名名單同步公布，Karol G等入圍。</p>
-        <div class="byline">來源：E! Online</div>
-      </div>
-    </div>
-
-    <!-- 電影 -->
-    <div class="news-col">
-      <div class="cat-title">最新電影 · Movies</div>
-
-      <div class="article">
-        <h3><a href="https://www.boxofficepro.com/the-biggest-movies-coming-to-theaters-in-may-2026/">《惡魔穿著普拉達2》強勢回歸</a></h3>
-        <p>迪士尼大製作《惡魔穿著普拉達2》（The Devil Wears Prada 2）時隔近20年推出續集，Meryl Streep再度出演，搭配新生代明星陣容，成為5月北美院線最受矚目的強檔。</p>
-        <div class="byline">來源：Boxoffice Pro</div>
-      </div>
-
-      <div class="article">
-        <h3>《曼達洛人與格羅古》星戰大作登上大銀幕</h3>
-        <p>Disney旗下《Star Wars》系列改編電影《The Mandalorian &amp; Grogu》正式在院線上映，將串流影集搬上大銀幕，大量粉絲效應帶動強勁首週票房，Grogu（Baby Yoda）週邊熱賣。</p>
-        <div class="byline">來源：Cinemablend</div>
-      </div>
-
-      <div class="article">
-        <h3>A24恐怖新作《Backrooms》改編知名都市傳說</h3>
-        <p>獨立電影公司A24以網路知名都市傳說「後室（Backrooms）」為靈感打造恐怖片，由Renate Reinsve飾演尋找失蹤病患的心理治療師，誤入詭異次元空間，上映後口碑火熱。</p>
-        <div class="byline">來源：Movie Insider</div>
+        <div class="article-headline">
+          <a href="https://money.udn.com/" target="_blank">富邦金現金股利4.25元 追平歷史最高紀錄</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date stale">04/30 ⚠️</span>
+          來源：經濟日報
+        </div>
+        <div class="article-body">
+          富邦金控公告配發普通股每股現金股利4.25元，追平歷年現金股利的最高紀錄，股東大會通過後將依程序進行除息。
+        </div>
+        <div class="article-byline">經濟日報</div>
       </div>
     </div>
+  </div>
 
-  </div><!-- .news-grid -->
-</div><!-- .region-block -->
-
-
-<!-- ══════════════════════════════════════════
-     日 本 版
-══════════════════════════════════════════ -->
-<div class="region-header">🇯🇵 &nbsp;日&nbsp;本&nbsp;&nbsp;JAPAN</div>
-<div class="region-block">
-  <div class="news-grid">
-
-    <!-- 科技 -->
-    <div class="news-col">
-      <div class="cat-title">資訊科技 · IT / Tech</div>
-
+  <!-- 娛樂 -->
+  <div class="cat-band">▌娛樂演藝 ENTERTAINMENT</div>
+  <div class="columns columns-3">
+    <div class="col">
       <div class="article">
-        <h3><a href="https://asia.nikkei.com/business/technology/artificial-intelligence/ntt-data-turns-to-generative-ai-to-develop-entire-it-systems">微軟宣布對日本投資100億美元</a></h3>
-        <p>微軟宣布2026至2029年間對日本投資100億美元，為史上最大規模對日承諾，涵蓋AI資料中心擴建（與SoftBank及Sakura Internet合作）、網路安全合作，以及承諾培訓逾百萬名工程師。</p>
-        <div class="byline">來源：Nikkei Asia</div>
-      </div>
-
-      <div class="article">
-        <h3><a href="https://www.nippon.com/en/news/yjj2026052101092/">日本通過首部AI國家基本計劃</a></h3>
-        <p>日本政府正式通過首部AI國家基本計劃，強化對高性能AI模型的監管，並呼籲電信、廣播等民間業者配合防制AI濫用風險。日本LDP同步推出結合AI與區塊鏈的金融五年路線圖。</p>
-        <div class="byline">來源：Nippon.com / CDO Magazine</div>
-      </div>
-
-      <div class="article">
-        <h3>NTT Data運用生成式AI開發整套IT系統</h3>
-        <p>NTT Data宣布運用生成式AI技術，嘗試自動化開發完整IT系統，大幅縮短研發週期。此一突破性應用被視為日本IT產業擁抱AI轉型的重要里程碑。</p>
-        <div class="byline">來源：Nikkei Asia</div>
+        <div class="article-headline">楊烈世界巡迴演唱會今晚高雄登場</div>
+        <div class="article-meta">
+          <span class="article-date">05/27</span>
+          來源：娛樂星聞
+        </div>
+        <div class="article-body">
+          資深藝人楊烈世界巡迴演唱會高雄場，今日（5月27日）晚間7時在衛武營國家藝術文化中心歌劇院盛大登場，粉絲引頸期盼。
+        </div>
+        <div class="article-byline">娛樂星聞</div>
       </div>
     </div>
-
-    <!-- 體育 -->
-    <div class="news-col">
-      <div class="cat-title">體育 · Sports</div>
-
+    <div class="col">
       <div class="article">
-        <h3><a href="https://www.tv-tokyo.co.jp/sports/articles/2026/05/041721.html">大谷翔平5月打擊陷低潮，月打率僅.129</a></h3>
-        <p>洛杉磯道奇隊大谷翔平5月份遭遇打擊寒流，月打率僅.129（31打數4安打），且連續10場、46個打數無全壘打。球隊方面有好消息：受傷球員Betts即將回歸陣容。</p>
-        <div class="byline">來源：テレ東スポーツ</div>
-      </div>
-
-      <div class="article">
-        <h3>道奇佐佐木朗希先發7局失1分，橫掃天使</h3>
-        <p>道奇旅美投手佐佐木朗希（Roki Sasaki）對天使系列賽先發7局僅失1分、三振8人，搭配Kyle Tucker3安打3打點，道奇以10比1完封橫掃系列賽，展現聯盟最強戰力。</p>
-        <div class="byline">來源：Japan Times</div>
-      </div>
-
-      <div class="article">
-        <h3>J聯賽激烈爭冠戰持續延燒</h3>
-        <p>J1聯賽進入5月賽季白熱化，各豪門球隊爭冠態勢激烈。上半賽季即將結束，各隊積分差距縮小，排名爭奪牽動球迷心情。聯賽主辦方宣布上座率再創新高。</p>
-        <div class="byline">來源：Japan Today</div>
+        <div class="article-headline">小S IG曬姊妹情深 配張惠妹催淚神曲</div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：噓！星聞
+        </div>
+        <div class="article-body">
+          藝人小S（徐熙娣）5月26日於Instagram分享與姊妹相處的溫馨時刻，搭配張惠妹的催淚歌曲〈聽你．聽我〉，引發眾多粉絲共鳴留言，互動熱烈。
+        </div>
+        <div class="article-byline">噓！星聞</div>
       </div>
     </div>
-
-    <!-- 金融 -->
-    <div class="news-col">
-      <div class="cat-title">金融財經 · Finance</div>
-
+    <div class="col">
       <div class="article">
-        <h3><a href="https://seikatsu-update.com/archives/401">日股5月7日大漲3320點，創近期新高</a></h3>
-        <p>受中東停戰預期推動，東京股市5月7日單日大漲3320點，日經平均收盤達62,833日圓，創近期新高。野村證券預測，若行情延續，年底有望突破7萬日圓大關。</p>
-        <div class="byline">來源：生活アップデート / 野村證券</div>
-      </div>
-
-      <div class="article">
-        <h3>日本製造業PMI 55.1，擴張態勢深化</h3>
-        <p>日本4月製造業PMI速報值達55.1，遠高於50榮枯線，顯示製造業景氣持續擴張。4月貿易收支更出現6,670億日圓的大幅黑字，外需旺盛，AI相關產業訂單尤其強勁。</p>
-        <div class="byline">來源：日本金融市場報告</div>
-      </div>
-
-      <div class="article">
-        <h3>日銀維持利率0.75%，暫不急於升息</h3>
-        <p>日本銀行在4月份的理監事會議中決定維持基準利率0.75%不變，表明不急於進一步升息。政府與日銀在五一長假期間估計進行了4至5兆日圓的外匯干預，穩定日圓匯率。</p>
-        <div class="byline">來源：Kabutan News / Diamond</div>
+        <div class="article-headline">王瞳離開民視自立門戶 合作15年正式告別</div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：娛樂星聞
+        </div>
+        <div class="article-body">
+          藝人王瞳與民視電視台合作長達15年，近日傳出雙方已結束合作關係，王瞳選擇自立門戶，開展演藝生涯新篇章，消息曝光引發業界關注。
+        </div>
+        <div class="article-byline">娛樂星聞</div>
       </div>
     </div>
+  </div>
 
-    <!-- 娛樂 -->
-    <div class="news-col">
-      <div class="cat-title">娛樂演藝 · Entertainment</div>
-
+  <!-- 電影 -->
+  <div class="cat-band">▌最新電影 MOVIES</div>
+  <div class="columns columns-2">
+    <div class="col">
       <div class="article">
-        <h3>日向坂46確定赴美音樂節，四年後再登海外舞台</h3>
-        <p>日本女子偶像團體日向坂46宣布將赴美國音樂節演出，距離上次海外演出已睽違四年。粉絲期待已久，本次出訪預計成為日本偶像文化向國際輸出的重要代表事件。</p>
-        <div class="byline">來源：Oricon / Infoseek娛樂</div>
+        <div class="article-headline">
+          <a href="https://blog.enjoymovie.net/tw-cinema-may-2026-releases/" target="_blank">《曼達洛人與古古》台灣上映 星際大戰睽違7年重返大銀幕</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/22</span>
+          來源：Enjoy Movie Blog
+        </div>
+        <div class="article-body">
+          迪士尼/盧卡斯影業出品的《星際大戰：曼達洛人與古古》（The Mandalorian &amp; Grogu）於5月22日正式在台上映，Pedro Pascal主演，為星際大戰系列睽違近七年重返戲院的重磅之作，上映首週引發粉絲搶票熱潮。
+        </div>
+        <div class="article-byline">Enjoy Movie Blog</div>
       </div>
-
       <div class="article">
-        <h3>武藤千春公開婚禮照，喜訊引爆話題</h3>
-        <p>日本知名藝人武藤千春正式宣布婚訊並公開婚禮現場照片，感謝粉絲多年來的支持。婚禮照片溫馨浪漫，迅速在社群媒體上引發熱烈祝福，登上日本各大娛樂版頭條。</p>
-        <div class="byline">來源：Jprime 週刊女性</div>
-      </div>
-
-      <div class="article">
-        <h3>吉川ひなの七年後重返電視，分享精彩人生歷程</h3>
-        <p>昔日人氣模特兒吉川ひなの睽違七年重返電視螢光幕，坦承歷經兩段婚姻、從夏威夷移居沖繩的轉折人生，談及放下名利追求心靈平靜的心路歷程，引發廣泛共鳴。</p>
-        <div class="byline">來源：Livedoor News</div>
-      </div>
-    </div>
-
-    <!-- 電影 -->
-    <div class="news-col">
-      <div class="cat-title">最新電影 · Movies</div>
-
-      <div class="article">
-        <h3><a href="https://metropolisjapan.com/upcoming-movies-in-japan-2026/">《狂想曲 Rhapsody》5月1日溫馨上映</a></h3>
-        <p>輕鬆浪漫喜劇《Rhapsody, Rhapsody》（狂想曲）5月1日在日本上映，由高橋一生主演，飾演一名驚覺自己不知情結婚了6個月的男子，與古怪新婚妻子的爆笑相處故事獲好評。</p>
-        <div class="byline">來源：Metropolis Japan</div>
-      </div>
-
-      <div class="article">
-        <h3>《Silent Friend》5月8日感動上映</h3>
-        <p>日本院線新作《Silent Friend》於5月8日正式上映，以細膩情感描繪人與人之間無聲卻深刻的羈絆，上映後在日本各地引發觀眾熱烈迴響，口碑持續發酵。</p>
-        <div class="byline">來源：Metropolis Japan / IMDb</div>
-      </div>
-
-      <div class="article">
-        <h3>《克里姆林宮術士》5月15日登日本院線</h3>
-        <p>改編自同名小說的政治驚悚片《The Wizard of the Kremlin》於5月15日在日本上映，深度描繪現代政治權力的黑暗面，吸引注重政治議題的觀眾族群，業界預測有望引發討論熱潮。</p>
-        <div class="byline">來源：Metropolis Japan</div>
+        <div class="article-headline">
+          <a href="https://looryfilm.tw/2026-may-movies/" target="_blank">《末代皇帝》4K數位修復版 5月22日重映奧斯卡傳奇</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/22</span>
+          來源：如履的電影筆記
+        </div>
+        <div class="article-body">
+          橫掃奧斯卡9項大獎的經典電影《末代皇帝》4K數位修復版於5月22日在台重映，重現台灣史上首部突破億元票房的電影神話，影迷好評不斷。
+        </div>
+        <div class="article-byline">如履的電影筆記</div>
       </div>
     </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://blog.enjoymovie.net/tw-cinema-may-2026-releases/" target="_blank">《後室》A24新恐怖片月底壓軸 改編自網路傳說</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/25</span>
+          來源：Enjoy Movie Blog
+        </div>
+        <div class="article-body">
+          A24出品的恐怖新作《後室》（Backrooms）改編自著名網路傳說，5月底在台上映，故事圍繞一名治療師進入詭異異次元尋找失蹤患者，令人毛骨悚然，已引起大批恐怖片迷期待。
+        </div>
+        <div class="article-byline">Enjoy Movie Blog</div>
+      </div>
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.cool-style.com.tw/wd2/archives/1257496-2026" target="_blank">《日本催淚新片「別離無恙」》目黑蓮主演 月底登台</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/25</span>
+          來源：Cool-Style
+        </div>
+        <div class="article-body">
+          由目黑蓮與濱邊美波主演的日本催淚電影《別離無恙》月底在台上映，細膩的情感刻畫和優美的日本風景備受期待，日系電影迷不容錯過。
+        </div>
+        <div class="article-byline">Cool-Style</div>
+      </div>
+    </div>
+  </div>
 
-  </div><!-- .news-grid -->
-</div><!-- .region-block -->
+</div><!-- /section-wrapper taiwan -->
 
 
-<!-- ══ 頁腳 ══ -->
-<footer>
-  <p>由 Claude AI 自動整理 &middot; 每日更新 &nbsp;|&nbsp; Automatically curated by Claude AI &middot; Daily Updates</p>
-  <p style="margin-top:4px; color:#aaa;">新聞內容僅供參考，請以各媒體原始報導為準。All news summaries are for reference only.</p>
-</footer>
+<!-- ============================================================ -->
+<!-- 美國版 USA                                                    -->
+<!-- ============================================================ -->
+<div class="section-header"><span class="flag-icon">🇺🇸</span>美國要聞 UNITED STATES</div>
+
+<div class="section-wrapper">
+
+  <!-- 科技 -->
+  <div class="cat-band">▌資訊科技 IT / TECHNOLOGY</div>
+  <div class="columns columns-2">
+    <div class="col lead-article">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://techstartups.com/2026/05/22/top-tech-news-today-may-22-2026/" target="_blank">SpaceX提交IPO申請 料成史上最大規模首次公開募股</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/20</span>
+          來源：TechStartups
+        </div>
+        <div class="article-body">
+          SpaceX正式向美國證管會（SEC）提交S-1招股書，股票代碼「SPCX」，預計將成為史上最大規模IPO。公司2025年營收達187億美元，年增33%，其中Starlink單季獲利達12億美元。馬斯克將透過B類股保留85%投票權，並設有以在火星建立百萬人口永久殖民地為條件的績效股票獎勵計畫。
+        </div>
+        <div class="article-byline">綜合報導 / TechStartups</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.cnbc.com/technology/" target="_blank">Nvidia預測Q2營收910億美元 宣布800億美元回購</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：CNBC
+        </div>
+        <div class="article-body">
+          AI晶片龍頭Nvidia預測第二季營收達910億美元，超越華爾街預期，並宣布高達800億美元的股票回購計畫，顯示公司對未來業績充滿信心。
+        </div>
+        <div class="article-byline">CNBC</div>
+      </div>
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://techstartups.com/2026/05/21/top-tech-news-today-may-21-2026/" target="_blank">Anthropic估值逼近9000億美元 即將完成超大規模融資</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/21</span>
+          來源：TechStartups
+        </div>
+        <div class="article-body">
+          AI公司Anthropic據報即將完成大規模新一輪融資，估值料接近9000億美元，且有望於本季首次實現獲利，預測Q2營收達109億美元，營業利潤5.59億美元。
+        </div>
+        <div class="article-byline">TechStartups</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 體育 -->
+  <div class="cat-band">▌體育 SPORTS</div>
+  <div class="columns columns-3">
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.foxnews.com/sports/new-york-knicks-sweep-cavaliers-reach-first-nba-finals-since-1999-dominant-game-4-blowout" target="_blank">紐約尼克斯橫掃騎士 27年來首闖NBA總決賽</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/25</span>
+          來源：Fox Sports
+        </div>
+        <div class="article-body">
+          紐約尼克斯以4比0橫掃克里夫蘭騎士，闖入1999年後首次NBA總決賽。目前西區決賽馬刺對雷霆第5戰備受矚目，Wembanyama表現出色，馬刺正力拚晉級。
+        </div>
+        <div class="article-byline">Fox Sports</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://sports.yahoo.com/soccer/live/2026-world-cup-news-live-tracker" target="_blank">美國世界盃26人名單公布 普利西奇、麥肯尼領銜</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/27</span>
+          來源：Yahoo Sports
+        </div>
+        <div class="article-body">
+          美國男子足球隊正式公布2026世界盃26人名單，主帥波切蒂諾確認陣容，包括老將普利西奇（Pulisic）、麥肯尼（McKennie）及新星巴洛岡（Balogun）。本屆世界盃由美國、加拿大、墨西哥聯合主辦。
+        </div>
+        <div class="article-byline">Yahoo Sports</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">波特蘭之火81-74勝紐約自由人 NWSL戰況激烈</div>
+        <div class="article-meta">
+          <span class="article-date">05/27</span>
+          來源：NBC Sports
+        </div>
+        <div class="article-body">
+          NWSL女子籃球聯賽，波特蘭之火（Portland Fire）以81比74擊敗紐約自由人，Carla Leite貢獻18分，並在末段投進關鍵三分球，奠定勝局。
+        </div>
+        <div class="article-byline">NBC Sports</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 金融 -->
+  <div class="cat-band">▌金融財經 FINANCE</div>
+  <div class="columns columns-2">
+    <div class="col lead-article">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">美股續創歷史新高 S&amp;P 500、納斯達克齊揚</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：Charles Schwab
+        </div>
+        <div class="article-body">
+          受美伊談判接近協議消息提振，美股5月26日繼續攀高，S&amp;P 500上漲0.7%，納斯達克指數大漲逾1%，雙雙刷新歷史紀錄。科技、工業及原物料類股領漲，市場對石油供應前景保持樂觀，通膨壓力有望舒緩。S&amp;P 500本季淨利潤率達13.4%，亦創下FactSet自2009年追蹤以來最高紀錄。
+        </div>
+        <div class="article-byline">Charles Schwab</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.crestwoodadvisors.com/may-2026-economic-and-market-update/" target="_blank">美伊談判傳佳音 油價承壓通膨壓力減緩</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：Crestwood Advisors
+        </div>
+        <div class="article-body">
+          美國總統川普及國務卿盧比奧表示，美國與伊朗已接近就恢復荷姆茲海峽能源貿易達成協議，此消息帶動油價下跌，緩解通膨壓力，為市場注入利多。
+        </div>
+        <div class="article-byline">Crestwood Advisors</div>
+      </div>
+      <div class="article">
+        <div class="article-headline">今日財報焦點：Salesforce、Marvell、Snowflake登場</div>
+        <div class="article-meta">
+          <span class="article-date">05/27</span>
+          來源：CNBC
+        </div>
+        <div class="article-body">
+          5月27日美股財報重點包括Salesforce（CRM）、Marvell Technology（MRVL）、Snowflake（SNOW）及Synopsys（SNPS），另有4月新屋銷售數據公布，市場密切關注。
+        </div>
+        <div class="article-byline">CNBC</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 娛樂 -->
+  <div class="cat-band">▌娛樂演藝 ENTERTAINMENT</div>
+  <div class="columns columns-3">
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://eurweb.com/celebrity-news-roundup-may-2026/" target="_blank">2026美國音樂獎盛大舉行 Karol G、Justin Bieber入圍</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/25</span>
+          來源：EURweb
+        </div>
+        <div class="article-body">
+          2026年美國音樂獎（AMA）於5月25日舉行，Karol G、Sexyy Red、Kehlani、Bad Bunny、Justin Bieber等多位巨星入圍，典禮星光熠熠，令樂迷大飽眼福。
+        </div>
+        <div class="article-byline">EURweb</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.tmz.com/" target="_blank">Jamie Foxx 58歲再添喜 與女友共迎第三胎</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/12</span>
+          來源：TMZ
+        </div>
+        <div class="article-body">
+          好萊塢影星Jamie Foxx（58歲）宣布與女友Alyce Huckstepp即將迎來第三個孩子，兩人自2022年交往，期間歷經短暫分手後復合，此喜訊5月12日正式曝光。
+        </div>
+        <div class="article-byline">TMZ</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.eonline.com/news" target="_blank">Taylor Swift與Travis Kelce紐約甜蜜共進晚餐</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：E! News
+        </div>
+        <div class="article-body">
+          天后Taylor Swift與NFL球星Travis Kelce日前現身紐約一家餐廳共進晚餐，兩人談笑風生，恩愛如初，再度引發媒體與粉絲的廣泛關注。
+        </div>
+        <div class="article-byline">E! News</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 電影 -->
+  <div class="cat-band">▌最新電影 MOVIES</div>
+  <div class="columns columns-2">
+    <div class="col lead-article">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.boxofficepro.com/the-biggest-movies-coming-to-theaters-in-may-2026/" target="_blank">《穿著Prada的惡魔2》Hathaway與Streep王者回歸</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/22</span>
+          來源：Boxoffice Pro
+        </div>
+        <div class="article-body">
+          安·海瑟薇（Anne Hathaway）與梅莉·史翠普（Meryl Streep）主演的《穿著Prada的惡魔2》（The Devil Wears Prada 2）本月上映，兩位影后強勢回歸，續集延續原作精髓，時裝界再現波瀾，上映首週引發觀影熱潮，票房表現亮眼。
+        </div>
+        <div class="article-byline">Boxoffice Pro</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.boxofficepro.com/the-biggest-movies-coming-to-theaters-in-may-2026/" target="_blank">《真人快打Ⅱ》（Mortal Kombat II）上映 動作場面升級</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/16</span>
+          來源：Boxoffice Pro
+        </div>
+        <div class="article-body">
+          《真人快打Ⅱ》（Mortal Kombat II）本月在美上映，由2021年版本原班人馬回歸，打鬥場面全面升級，首映週末票房預計遠超前作的2330萬美元開幕成績。
+        </div>
+        <div class="article-byline">Boxoffice Pro</div>
+      </div>
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://editorial.rottentomatoes.com/article/the-most-anticipated-movies-of-2026/" target="_blank">A24《後室》（Backrooms）本月上映 網路都市傳說成真</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/25</span>
+          來源：Rotten Tomatoes
+        </div>
+        <div class="article-body">
+          A24改編自著名網路都市傳說的恐怖電影《後室》本月上映，一名心理治療師意外進入詭異異次元，尋找失蹤患者的驚悚旅程令觀眾不寒而慄，恐怖片迷好評如潮。
+        </div>
+        <div class="article-byline">Rotten Tomatoes</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /section-wrapper usa -->
+
+
+<!-- ============================================================ -->
+<!-- 日本版 JAPAN                                                  -->
+<!-- ============================================================ -->
+<div class="section-header"><span class="flag-icon">🇯🇵</span>日本要聞 JAPAN</div>
+
+<div class="section-wrapper">
+
+  <!-- 科技 -->
+  <div class="cat-band">▌資訊科技 IT / TECHNOLOGY</div>
+  <div class="columns columns-2">
+    <div class="col lead-article">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://tech.gijukatsu.com/weekly-mi-news-2026-05-23/" target="_blank">IBM / RIKEN量子運算突破 模擬逾萬原子蛋白質系統</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/07</span>
+          來源：GIJUKATSU Tech
+        </div>
+        <div class="article-body">
+          IBM、克里夫蘭診所與日本理化學研究所（RIKEN）聯合宣布量子計算重大突破，結合量子電腦與超級電腦，成功模擬最多12,635個原子的蛋白質系統。Q-CTRL協助完成含最多60顆電子的材料模擬，僅需約2分鐘，精度在1%以內，相比傳統運算需百小時，效率大幅躍升。
+        </div>
+        <div class="article-byline">綜合報導 / GIJUKATSU Tech</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://note.com/yasuhitoo/n/nfd30badb6c08" target="_blank">Google I/O 2026 日本觀點：AI從「回答」邁向「行動」</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/20</span>
+          來源：Note.com
+        </div>
+        <div class="article-body">
+          Google I/O 2026於日本時間5月20日凌晨2時舉行，Google CEO桑達爾·皮查伊表示，目前每月處理的Token數量已突破3.2千兆（quadrillion）次。新推出的Gemini 3.5 Flash、Gemini Omni等AI產品，標誌AI服務從「回答問題」進化為「主動執行任務」的新時代。
+        </div>
+        <div class="article-byline">Note.com</div>
+      </div>
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.mi.com/jp/event/2026/xiaomi-launch-may-2026/" target="_blank">小米5月28日維也納發表 Xiaomi 17T系列登場</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/25</span>
+          來源：Xiaomi Japan
+        </div>
+        <div class="article-body">
+          小米（Xiaomi）日本官網宣布，將於5月28日在奧地利維也納舉行全球發表會，正式推出Xiaomi 17T系列新機，日本市場預計隨後跟進上市。
+        </div>
+        <div class="article-byline">Xiaomi Japan</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 體育 -->
+  <div class="cat-band">▌體育 SPORTS</div>
+  <div class="columns columns-3">
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.nikkei.com/news/category/sports/" target="_blank">三笘薰膕繩肌手術成功 傷後復出期程待評估</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：日本經濟新聞
+        </div>
+        <div class="article-body">
+          日本足球國腳三笘薰（Kaoru Mitoma）於5月26日接受膕繩肌手術，手術順利完成，後續復健時程將另行評估。世界盃備戰期間這一消息令日本球迷憂慮。
+        </div>
+        <div class="article-byline">日本経済新聞</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">村上宗隆第18轟奪回本壘打王 太平洋聯盟交流戰激烈</div>
+        <div class="article-meta">
+          <span class="article-date stale">05/20 ⚠️</span>
+          來源：Sports Yahoo Japan
+        </div>
+        <div class="article-body">
+          東京養樂多燕子隊強打村上宗隆本季擊出第18支全壘打，重新奪回NPB本壘打王寶座。目前日職聯盟正值太平洋聯盟與中央聯盟交流賽期間，各隊戰況激烈。
+        </div>
+        <div class="article-byline">Sports Yahoo Japan</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">相撲力士連番退賽 協會向橫綱審議委員會致歉</div>
+        <div class="article-meta">
+          <span class="article-date">05/24</span>
+          來源：Sports Yahoo Japan
+        </div>
+        <div class="article-body">
+          日本相撲協會近期多名力士相繼宣布退賽，協會理事長就此向橫綱審議委員會正式致歉，並承諾加強選手健康管理，防止類似情況再次發生。
+        </div>
+        <div class="article-byline">Sports Yahoo Japan</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 金融 -->
+  <div class="cat-band">▌金融財經 FINANCE</div>
+  <div class="columns columns-2">
+    <div class="col lead-article">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://finance.yahoo.co.jp/quote/998407.O" target="_blank">日經平均大漲1,410點 AI半導體族群領漲至6萬3千點</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/22</span>
+          來源：Yahoo! Finance Japan
+        </div>
+        <div class="article-body">
+          日本東京股市日經平均指數近期大漲1,410點，收盤來到63,094.61點，AI晶片與半導體相關個股持續引領多頭行情。野村證券已上調2026年底日經平均目標至63,000點，並預測2027年底達65,000點，市場對日股長多格局保持信心。
+        </div>
+        <div class="article-byline">Yahoo! Finance Japan</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.nomura.co.jp/wealthstyle/article/0724/" target="_blank">野村證券上調日股目標 2028年底看至68,000點</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/20</span>
+          來源：野村證券
+        </div>
+        <div class="article-body">
+          野村證券策略師發布最新展望，上調日經平均目標，主要情境下2026年底63,000點、2027年底65,000點、2028年底68,000點，上行情境更預測2026年底突破7萬點。
+        </div>
+        <div class="article-byline">野村證券</div>
+      </div>
+      <div class="article">
+        <div class="article-headline">芝浦機械業績大幅下滑 中國需求萎縮拖累全年</div>
+        <div class="article-meta">
+          <span class="article-date">05/15</span>
+          來源：日本経済新聞
+        </div>
+        <div class="article-body">
+          芝浦機械2026年3月期決算，因中國市場需求持續萎縮，全年營收年減21%至1,328億日圓，營業利益大幅下滑69%至43.67億日圓，中國市場風險再度受到業界關注。
+        </div>
+        <div class="article-byline">日本経済新聞</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 娛樂 -->
+  <div class="cat-band">▌娛樂演藝 ENTERTAINMENT</div>
+  <div class="columns columns-3">
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://news.livedoor.com/topics/keyword/34103/" target="_blank">出口夏希與伊藤健太郎熱戀曝光 粉絲反應熱烈</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/26</span>
+          來源：Livedoor News
+        </div>
+        <div class="article-body">
+          日本人氣女星出口夏希與人氣男演員伊藤健太郎的戀情正式曝光，成為5月最受矚目的娛樂新聞，粉絲之間反應熱烈，兩人均尚未公開回應。
+        </div>
+        <div class="article-byline">Livedoor News</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://www.oricon.co.jp/entertainment/" target="_blank">平野紫耀香水寫真曝光 SNS引爆百萬討論</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/25</span>
+          來源：Oricon News
+        </div>
+        <div class="article-body">
+          人氣偶像平野紫耀（Hirano Sho）最新香水品牌寫真正式公開，白色襯衫的清爽造型在社群網站引發百萬次討論，粉絲留言洗版，話題熱度持續延燒。
+        </div>
+        <div class="article-byline">Oricon News</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">えなこ日本神話主題cosplay驚豔亮相</div>
+        <div class="article-meta">
+          <span class="article-date">05/24</span>
+          來源：Livedoor News
+        </div>
+        <div class="article-body">
+          人氣cosplayer えなこ（Enako）以日本神話為主題，推出最新神話系列cosplay造型，精緻的服裝與道具製作引發網路熱議，粉絲讚不絕口。
+        </div>
+        <div class="article-byline">Livedoor News</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 電影 -->
+  <div class="cat-band">▌最新電影 MOVIES</div>
+  <div class="columns columns-2">
+    <div class="col lead-article">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://eiga.com/ranking/jp/" target="_blank">《曼達洛人與古古》日本上映3日票房7.49億日圓 奪冠</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/22</span>
+          來源：映画.com
+        </div>
+        <div class="article-body">
+          迪士尼/盧卡斯影業出品《星際大戰：曼達洛人與古古》5月22日在日本上映，首映三日動員43萬5000人、票房收入達7億4900萬日圓，強勢奪下票房冠軍，星際大戰系列在日本的高人氣再獲印證。
+        </div>
+        <div class="article-byline">映画.com</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://eiga.com/ranking/jp/" target="_blank">《名探偵コナン》累計票房破124億日圓 第7週仍強勢</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/25</span>
+          來源：映画.com
+        </div>
+        <div class="article-body">
+          今年劇場版《名探偵柯南：高速公路墜落天使》上映第7週，週末三日仍吸引18萬9000人次入場，票房收入2.77億日圓，累計票房已突破124億日圓，持續締造佳績。
+        </div>
+        <div class="article-byline">映画.com</div>
+      </div>
+      <div class="article">
+        <div class="article-headline">
+          <a href="https://lp.p.pia.jp/article/news/462889/index.html" target="_blank">5月期待度第一《映画 正直不動産》、《SUPER BEAVER紀錄片》上映</a>
+        </div>
+        <div class="article-meta">
+          <span class="article-date">05/20</span>
+          來源：ぴあ映画
+        </div>
+        <div class="article-body">
+          日本影迷票選5月最期待新片，《映画 正直不動産》榮登首位，另外結成20週年的搖滾樂團SUPER BEAVER一年間幕後紀錄電影《現在地》亦於5月底上映，樂迷熱情搶票。
+        </div>
+        <div class="article-byline">ぴあ映画</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /section-wrapper japan -->
+
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  由 Claude AI 自動整理 · 每日更新 &nbsp;|&nbsp; 2026年5月27日（星期三）&nbsp;|&nbsp; 資料來源：各地區主要媒體
+</div>
 
 </body>
 </html>
