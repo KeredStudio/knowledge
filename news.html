@@ -3,590 +3,572 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日新聞 Daily News — 2026年5月28日</title>
+<title>每日新聞 Daily News — 2026年5月29日</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: 'Georgia', 'Times New Roman', '細明體', 'PMingLiU', serif;
+    font-family: 'Georgia', 'Times New Roman', '標楷體', serif;
     background: #f5f0e8;
-    color: #111;
+    color: #1a1a1a;
+    font-size: 15px;
     line-height: 1.6;
   }
-  /* ── 報頭 ── */
   .masthead {
     background: #fff;
-    border-bottom: 4px double #111;
+    border-bottom: 4px double #1a1a1a;
+    border-top: 8px solid #1a1a1a;
     text-align: center;
-    padding: 16px 20px 10px;
+    padding: 18px 10px 12px;
   }
-  .masthead h1 {
-    font-size: clamp(2rem, 7vw, 4.5rem);
-    letter-spacing: .12em;
+  .masthead .paper-name {
+    font-size: 3.2em;
     font-weight: 900;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    border-top: 3px solid #111;
-    border-bottom: 3px solid #111;
-    padding: 6px 0;
-    margin: 4px 0;
+    font-family: 'Georgia', serif;
+    line-height: 1;
   }
-  .masthead .subtitle {
-    font-size: .9rem;
-    letter-spacing: .25em;
-    color: #444;
+  .masthead .paper-sub {
+    font-size: 1.1em;
+    letter-spacing: 0.25em;
     margin-top: 4px;
-  }
-  .masthead .dateline {
-    font-size: .85rem;
     color: #555;
-    margin-top: 6px;
-    font-style: italic;
   }
-  /* ── 地區 Tab 標題 ── */
-  .region-header {
-    background: #111;
+  .masthead .paper-date {
+    font-size: 0.9em;
+    margin-top: 8px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 4px 0;
+    color: #444;
+    letter-spacing: 0.1em;
+  }
+  .edition-bar {
+    background: #1a1a1a;
     color: #fff;
     text-align: center;
-    padding: 8px 0;
-    font-size: 1.3rem;
-    letter-spacing: .3em;
-    margin: 0;
+    font-size: 0.85em;
+    letter-spacing: 0.15em;
+    padding: 5px 10px;
   }
-  /* ── 大容器 ── */
-  .region-block {
+  .region-section {
     max-width: 1200px;
-    margin: 0 auto 30px;
-    background: #fff;
-    border: 1px solid #bbb;
+    margin: 20px auto 0;
+    padding: 0 10px;
   }
-  /* ── 欄位網格 ── */
-  .columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 0;
-    padding: 0;
-  }
-  .col {
-    border-right: 1px solid #ccc;
-    padding: 14px 16px;
-    min-height: 280px;
-  }
-  .col:last-child { border-right: none; }
-  /* ── 類別標題 ── */
-  .col-title {
-    font-size: .72rem;
-    letter-spacing: .25em;
-    text-transform: uppercase;
-    border-bottom: 2px solid #111;
-    padding-bottom: 4px;
-    margin-bottom: 10px;
-    color: #222;
-    font-weight: bold;
-  }
-  /* ── 新聞條目 ── */
-  .news-item {
+  .region-header {
+    border-top: 5px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    font-size: 1.6em;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    padding: 6px 10px;
     margin-bottom: 14px;
-    padding-bottom: 12px;
-    border-bottom: 1px dotted #ccc;
+    text-transform: uppercase;
+    background: #fff;
   }
-  .news-item:last-child { border-bottom: none; margin-bottom: 0; }
-  .news-headline {
-    font-size: .97rem;
-    font-weight: bold;
+  .region-header span.flag { margin-right: 8px; font-size: 1.2em; }
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    background: #1a1a1a;
+    border: 2px solid #1a1a1a;
+    margin-bottom: 30px;
+  }
+  .news-col {
+    background: #fefcf5;
+    padding: 12px 14px;
+    border-right: 1px solid #1a1a1a;
+  }
+  .news-col:last-child { border-right: none; }
+  .col-category {
+    font-size: 0.7em;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+  }
+  .news-item { margin-bottom: 16px; border-bottom: 1px dotted #ccc; padding-bottom: 12px; }
+  .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .news-title {
+    font-size: 0.95em;
+    font-weight: 700;
     line-height: 1.35;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
-  .news-headline a { color: #111; text-decoration: none; }
-  .news-headline a:hover { text-decoration: underline; }
+  .news-title a { color: #1a1a1a; text-decoration: none; }
+  .news-title a:hover { text-decoration: underline; }
   .news-date {
-    font-size: .72rem;
-    color: #888;
+    font-size: 0.72em;
+    color: #777;
     margin-bottom: 4px;
-    font-style: normal;
-    font-family: monospace;
+    font-family: 'Courier New', monospace;
   }
-  .news-date.stale { color: #b87333; }
+  .news-date .stale { color: #cc6600; font-weight: 600; }
   .news-summary {
-    font-size: .83rem;
+    font-size: 0.82em;
     color: #333;
     line-height: 1.5;
   }
   .news-source {
-    font-size: .72rem;
-    color: #777;
+    font-size: 0.7em;
+    color: #888;
     margin-top: 4px;
     font-style: italic;
   }
-  /* ── 頁腳 ── */
-  footer {
+  .footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 3px double #1a1a1a;
+    padding: 12px 10px;
     text-align: center;
-    padding: 18px;
-    font-size: .8rem;
-    color: #666;
-    border-top: 2px solid #111;
-    background: #fff;
-    letter-spacing: .1em;
+    font-size: 0.82em;
+    color: #555;
+    letter-spacing: 0.05em;
+    margin-bottom: 30px;
   }
-  /* ── RWD ── */
-  @media (max-width: 640px) {
-    .columns { grid-template-columns: 1fr; }
-    .col { border-right: none; border-bottom: 1px solid #ccc; }
-    .col:last-child { border-bottom: none; }
+  @media (max-width: 900px) {
+    .news-grid { grid-template-columns: repeat(2, 1fr); }
+    .news-col { border-right: none; border-bottom: 1px solid #1a1a1a; }
+  }
+  @media (max-width: 600px) {
+    .news-grid { grid-template-columns: 1fr; }
+    .masthead .paper-name { font-size: 2em; }
+    .region-header { font-size: 1.2em; }
   }
 </style>
 </head>
 <body>
 
-<!-- 報頭 -->
-<header class="masthead">
-  <div class="subtitle">SINCE 2026 · AUTOMATED EDITION · CLAUDE AI</div>
-  <h1>每日新聞 Daily News</h1>
-  <div class="dateline">中華民國一百一十五年 · 2026年5月28日（星期四） · THURSDAY, MAY 28, 2026</div>
-</header>
+<div class="masthead">
+  <div class="paper-name">每日新聞 Daily News</div>
+  <div class="paper-sub">臺灣 · 美國 · 日本 綜合報導</div>
+  <div class="paper-date">
+    中華民國一一五年 五月二十九日，星期五　｜　May 29, 2026, Friday　｜　令和8年5月29日（金）
+  </div>
+</div>
+<div class="edition-bar">▪ 由 Claude AI 自動整理 · 每日更新 ▪ ⚠️ 標示表示新聞距今超過2天 ▪</div>
 
-<!-- ════════════════════════ 台灣 ════════════════════════ -->
-<div class="region-block">
-  <div class="region-header">🇹🇼 台灣 · TAIWAN</div>
-  <div class="columns">
+<!-- 台灣 -->
+<div class="region-section">
+  <div class="region-header"><span class="flag">🇹🇼</span> 台灣 Taiwan</div>
+  <div class="news-grid">
 
-    <!-- 資訊科技 -->
-    <div class="col">
-      <div class="col-title">💻 資訊科技 IT / Tech</div>
+    <!-- 科技 -->
+    <div class="news-col">
+      <div class="col-category">💻 資訊科技 IT/Tech</div>
 
       <div class="news-item">
-        <div class="news-headline">
-          <a href="https://www.taipeitimes.com/News/front/archives/2026/05/28/2003858101" target="_blank">黃仁勳：台灣是AI革命震央，員工將擴至4,000人</a>
-        </div>
+        <div class="news-title">黃仁勳「兆元宴」盛大登場　台灣AI供應鏈齊聚</div>
         <div class="news-date">[05/28]</div>
-        <div class="news-summary">Nvidia執行長黃仁勳在台灣員工大會上表示，台灣是AI晶片、封裝及超算系統的製造核心，並宣布Nvidia未來數年將把台灣員工人數擴大至約4,000人。</div>
-        <div class="news-source">來源：Taipei Times</div>
+        <div class="news-summary">NVIDIA執行長黃仁勳5月28日舉辦台灣AI供應鏈盛宴，多位半導體及AI伺服器廠商董事長、總經理與會，共商AI基礎建設未來合作。</div>
+        <div class="news-source">來源：CNA / TechNews</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">
-          <a href="https://www.bloomberg.com/news/articles/2026-05-27/taiwan-said-to-suspect-nvidia-chips-smuggled-to-china-via-japan" target="_blank">台灣偵辦Nvidia晶片走私案 — 疑借道日本流向中國</a>
-        </div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">台灣基隆地檢署偵辦三名涉嫌偽造文件的被告，懷疑其利用日本轉運，成功將含有Nvidia先進AI晶片的Super Micro伺服器出口至中國。三人已遭收押。</div>
-        <div class="news-source">來源：Bloomberg</div>
+        <div class="news-title">台灣資安危機：OTP平台Every8D遭駭客入侵</div>
+        <div class="news-date">[05/28]</div>
+        <div class="news-summary">台灣最大OTP簡訊平台Every8D與企業通訊軟體TeamPlus爆發資安事件，駭客聲稱持有系統權限，政府單位與企業通訊面臨重大威脅。</div>
+        <div class="news-source">來源：iThome</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">
-          <a href="https://www.digitimes.com/news/a20260526PD222/robotics-smart-manufacturing-demand-taiwan-robot.html" target="_blank">台灣機器人供應鏈首季大幅成長，AI驅動製造需求爆發</a>
-        </div>
-        <div class="news-date">[05/26]</div>
-        <div class="news-summary">受惠AI自動化與人形機器人應用興起，台灣機器人供應鏈廠商2026年首季營收與利潤多呈兩位數成長，系統整合商及傳動元件供應商表現尤為突出。</div>
-        <div class="news-source">來源：Digitimes</div>
+        <div class="news-title"><span class="stale">⚠️</span> 聯發科與華碩Wi-Fi 8產品獲Computex Best Choice大獎</div>
+        <div class="news-date">[05/22] <span class="stale">⚠️</span></div>
+        <div class="news-summary">聯發科和華碩在台北國際電腦展（Computex 2026）推出的多款Wi-Fi 8標準產品獲得Best Choice Award大獎，顯示台灣廠商在無線網路技術上持續領先。</div>
+        <div class="news-source">來源：DIGITIMES</div>
       </div>
     </div>
 
     <!-- 體育 -->
-    <div class="col">
-      <div class="col-title">🏅 體育 Sports</div>
+    <div class="news-col">
+      <div class="col-category">🏅 體育 Sports</div>
 
       <div class="news-item">
-        <div class="news-headline">世桌賽爆冷門！台灣女隊3:1逆轉南韓</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">在英國倫敦舉行的世界桌球團體錦標賽，中華女隊在小組賽首戰以3:1逆轉由世界盃女單銅牌申裕斌領軍的南韓隊，被譽為本屆最大冷門之一。</div>
+        <div class="news-title">江國豪睽違693天重返一軍先發　投出勝利</div>
+        <div class="news-date">[05/28]</div>
+        <div class="news-summary">台灣中職旅外好手江國豪傷後復出，時隔693天重新先發登板並取得勝利，球迷與隊友給予熱烈歡迎，成為本週中職最振奮人心的好消息。</div>
         <div class="news-source">來源：自由體育</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">湯姆斯盃：中華男團戲劇性擊敗丹麥，分組第一晉8強</div>
+        <div class="news-title">中華羽球隊湯姆斯盃小組賽表現亮眼</div>
         <div class="news-date">[05/27]</div>
-        <div class="news-summary">2026年湯姆斯盃世界男子羽球團體錦標賽，中華男隊在小組賽最後一役驚天逆轉丹麥，以分組第1晉入淘汰賽8強，令球迷欣喜若狂。</div>
-        <div class="news-source">來源：自由體育</div>
+        <div class="news-summary">2026年湯姆斯優霸盃世界男女羽球團體賽進行中，中華隊在小組賽表現優異，鄭怡靜等主力選手狀況穩定，進軍晉級賽指日可待。</div>
+        <div class="news-source">來源：中央社</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">游泳「蝶王」王冠閎100蝶式6連霸，游出51秒90</div>
-        <div class="news-date">[05/26]</div>
-        <div class="news-summary">全大運公開組男子100公尺蝶式決賽，台灣名將王冠閎游出51秒90，成功衛冕金牌並完成個人6連霸壯舉，展現統治級競技實力。</div>
-        <div class="news-source">來源：中央社 CNA</div>
+        <div class="news-title">徐若熙日職初先發失利　先投1.2局失7分</div>
+        <div class="news-date">[05/26] <span class="stale">⚠️</span></div>
+        <div class="news-summary">台灣旅日投手徐若熙加盟日職豪門軟銀鷹隊後遭遇困境，首次先發僅投1.2局便失7分，後續調整引人關注。</div>
+        <div class="news-source">來源：TVBS體育</div>
       </div>
     </div>
 
-    <!-- 金融財經 -->
-    <div class="col">
-      <div class="col-title">📈 金融財經 Finance</div>
+    <!-- 金融 -->
+    <div class="news-col">
+      <div class="col-category">💰 金融財經 Finance</div>
 
       <div class="news-item">
-        <div class="news-headline">台股創歷史新高！收盤44,256點，成交量破1.55兆</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">台股5月27日大漲731點，收44,256.8點，突破44,000整數關口，並創下近期最大成交量1兆5,568億元，AI與科技股領漲全場。</div>
+        <div class="news-title">台達電2025年營收破5548億　年增31.76%</div>
+        <div class="news-date">[05/28]</div>
+        <div class="news-summary">台達電子5月28日召開股東常會，公布2025年合併營收新台幣5,548.85億元，較前年大幅成長31.76%，稅後純益達601億元，創歷史新高。</div>
         <div class="news-source">來源：經濟日報</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">兆豐金首季稅後淨利93.97億，年增17%</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">兆豐金控公布2026年第一季財報，稅後淨利達93.97億元，年增17%；4月單月更高達48.57億元，年增幅達124%，表現超乎市場預期。</div>
-        <div class="news-source">來源：經濟日報</div>
+        <div class="news-title"><span class="stale">⚠️</span> 台積電調高季配息至每股7元</div>
+        <div class="news-date">[05/12] <span class="stale">⚠️</span></div>
+        <div class="news-summary">台積電董事會通過調高2026年首季季配息金額至每股7元，展現對獲利前景的信心，受惠於AI晶片需求持續強勁成長。</div>
+        <div class="news-source">來源：工商時報</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">新台幣收盤升3.1分，報31.42元兌美元</div>
-        <div class="news-date">[05/28]</div>
-        <div class="news-summary">台北外匯市場今日新台幣兌美元收31.42元，升值3.1分，反映市場對台灣出口與科技產業前景樂觀的資金回流態勢。</div>
-        <div class="news-source">來源：中央銀行</div>
+        <div class="news-title"><span class="stale">⚠️</span> 台股加權指數突破4萬點歷史新高</div>
+        <div class="news-date">[05/04] <span class="stale">⚠️</span></div>
+        <div class="news-summary">台股加權指數5月初創下40,705.14點歷史新高，台積電、聯發科等權值股帶動漲勢，台股散戶開戶數突破1,408萬戶，投資普及率超過六成。</div>
+        <div class="news-source">來源：Yahoo股市</div>
       </div>
     </div>
 
-    <!-- 娛樂演藝 -->
-    <div class="col">
-      <div class="col-title">🎤 娛樂演藝 Entertainment</div>
+    <!-- 娛樂 -->
+    <div class="news-col">
+      <div class="col-category">🎤 娛樂演藝 Entertainment</div>
 
       <div class="news-item">
-        <div class="news-headline">韋禮安「韋，您好」巡演5/30台北小巨蛋開唱</div>
-        <div class="news-date">[05/28]</div>
-        <div class="news-summary">創作歌手韋禮安將於5月30日（六）在台北小巨蛋舉行「韋，您好」巡迴演唱會，票房熱絡，演出時間為晚間7:30，粉絲期待已久。</div>
+        <div class="news-title">葉舒華、趙雨凡入選Forbes亞洲30 Under 30</div>
+        <div class="news-date">[05/27]</div>
+        <div class="news-summary">韓國女團(G)I-DLE台灣成員葉舒華（26歲）與男團CORTIS成員趙雨凡（20歲）雙雙入選《富比士》2026年「亞洲30位30歲以下菁英榜」，為台灣藝人爭光。</div>
         <div class="news-source">來源：噓！星聞</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">楊烈世界巡迴高雄場圓滿落幕，座無虛席</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">資深藝人楊烈世界巡迴演唱會高雄場於5月27日在衛武營國家藝術中心歌劇院盛大登場，全場座無虛席，歌迷反應熱烈。</div>
-        <div class="news-source">來源：噓！星聞</div>
+        <div class="news-title">韋禮安「韋，您好」演唱會5月30日開唱</div>
+        <div class="news-date">[05/29]</div>
+        <div class="news-summary">創作歌手韋禮安「韋，您好」巡迴演唱會5月30日登場，Yuika亞洲巡演台北站也於同日開跑，五月底台北演唱會活動熱鬧非凡。</div>
+        <div class="news-source">來源：商業周刊</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">Yuika 2nd Asia Tour 5/30-31台灣連唱兩場</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">日本歌手Yuika第二次亞洲巡迴演唱會將於5月30日及31日在新北 Zepp New Taipei 連開兩場，為台灣樂迷帶來日系流行音樂饗宴。</div>
-        <div class="news-source">來源：噓！星聞</div>
+        <div class="news-title"><span class="stale">⚠️</span> 孫燕姿《就在日落以後》台北演唱會圓滿落幕</div>
+        <div class="news-date">[05/17] <span class="stale">⚠️</span></div>
+        <div class="news-summary">天后孫燕姿《就在日落以後》世界巡迴演唱會台北場於5月15至17日連續三場演出，現場萬人齊唱，引爆粉絲熱情，演出口碑極佳。</div>
+        <div class="news-source">來源：UDN星聞</div>
       </div>
     </div>
 
-    <!-- 最新電影 -->
-    <div class="col">
-      <div class="col-title">🎬 最新電影 Movies</div>
+    <!-- 電影 -->
+    <div class="news-col">
+      <div class="col-category">🎬 最新電影 Movies</div>
 
       <div class="news-item">
-        <div class="news-headline">
-          <a href="https://www.movieinsider.com/movies/may/2026" target="_blank">《曼達洛人與葛羅古》上映 — 星際大戰近十年首部大銀幕新作</a>
-        </div>
-        <div class="news-date">[05/22]</div>
-        <div class="news-summary">由大衛·費羅尼執導，《星際大戰：曼達洛人與葛羅古》正式登上大銀幕，是近十年來首部全新星際大戰電影，全球同步上映，票房開門紅。</div>
-        <div class="news-source">來源：Movie Insider / IMDb</div>
+        <div class="news-title">《後室》A24恐怖新作今日上映</div>
+        <div class="news-date">[05/29]</div>
+        <div class="news-summary">A24出品、改編自網路都市傳說的恐怖電影《後室（The Backrooms）》於今日台灣正式上映，由Chiwetel Ejiofor主演，是本週最受期待的恐怖片。</div>
+        <div class="news-source">來源：開眼電影</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">
-          <a href="https://en.wikipedia.org/wiki/List_of_American_films_of_2026" target="_blank">《穿著Prada的惡魔2》5月上映，Meryl Streep、Anne Hathaway再聚首</a>
-        </div>
-        <div class="news-date">[05/01]</div>
-        <div class="news-summary">睽違近20年，《穿著Prada的惡魔》原班人馬回歸，Meryl Streep、Anne Hathaway、Emily Blunt 共同主演，故事延續時尚媒體帝國的紙醉金迷，全球好評。</div>
-        <div class="news-source">來源：Cinemablend / Wikipedia</div>
+        <div class="news-title">《別離無恙》目黑蓮×濱邊美波催淚日本片</div>
+        <div class="news-date">[05/29]</div>
+        <div class="news-summary">日本青春愛情電影《別離無恙》由目黑蓮與濱邊美波主演，本週在台上映，劇情感人催淚，是五月底最受台灣觀眾期待的日本電影。</div>
+        <div class="news-source">來源：Enjoy Movie Blog</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">《The Backrooms》5/29上映，懸疑恐怖新片引話題</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">由Kane Parsons執導，Chiwetel Ejiofor 主演的《The Backrooms》5月29日公映，改編自網路恐怖傳說，融合心理驚悚元素，提前引發熱議。</div>
-        <div class="news-source">來源：Movie Insider</div>
+        <div class="news-title"><span class="stale">⚠️</span> 《曼達洛人與古古》Star Wars睽違七年回歸大銀幕</div>
+        <div class="news-date">[05/22] <span class="stale">⚠️</span></div>
+        <div class="news-summary">Star Wars系列《曼達洛人與古古》5月22日正式上映，睽違近七年重返大銀幕，粉絲熱情追捧，開映首週票房亮眼。</div>
+        <div class="news-source">來源：Marie Claire</div>
       </div>
     </div>
-
-  </div><!-- /columns -->
-</div><!-- /region-block -->
-
-<!-- ════════════════════════ 美國 ════════════════════════ -->
-<div class="region-block">
-  <div class="region-header">🇺🇸 美國 · USA</div>
-  <div class="columns">
-
-    <!-- 資訊科技 -->
-    <div class="col">
-      <div class="col-title">💻 資訊科技 IT / Tech</div>
-
-      <div class="news-item">
-        <div class="news-headline">
-          <a href="https://techstartups.com/2026/05/26/top-tech-news-today-may-26-2026/" target="_blank">SpaceX 提交IPO申報書，估值目標創史上最高紀錄</a>
-        </div>
-        <div class="news-date">[05/26]</div>
-        <div class="news-summary">SpaceX的S-1申報書包含36頁風險因素，標榜28兆美元潛在市場規模，並提出與火星殖民地掛鉤的高管薪酬方案，目標成為美國史上規模最大的IPO。</div>
-        <div class="news-source">來源：Tech Startups</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">Altman：AI不會像預期般大規模取代白領工作</div>
-        <div class="news-date">[05/26]</div>
-        <div class="news-summary">OpenAI執行長Sam Altman在雪梨演講中表示，AI快速普及不會產生他過去預測的大規模白領失業現象，為科技業的未來走向帶來較樂觀訊號。</div>
-        <div class="news-source">來源：Tech Startups</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">Dropbox執行長任職19年後宣布離任</div>
-        <div class="news-date">[05/26]</div>
-        <div class="news-summary">雲端儲存先驅Dropbox創辦人兼執行長 Drew Houston 宣布卸任，結束長達19年的領導生涯。公司已啟動繼任人選搜尋程序，股價因此波動。</div>
-        <div class="news-source">來源：Tech Startups</div>
-      </div>
-    </div>
-
-    <!-- 體育 -->
-    <div class="col">
-      <div class="col-title">🏅 體育 Sports</div>
-
-      <div class="news-item">
-        <div class="news-headline">Pulisic、McKennie 確定入選美國2026世界盃大名單</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">Christian Pulisic 與 Weston McKennie 正式列入美國2026 FIFA世界盃名單，美國足球界對主場作戰寄予厚望，本屆世界盃由美、加、墨三國聯合主辦。</div>
-        <div class="news-source">來源：ESPN</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">MLB：道奇對決落磯山脈，夏日棒球熱鬧開打</div>
-        <div class="news-date">[05/28]</div>
-        <div class="news-summary">美國職棒洛杉磯道奇今日主場迎戰科羅拉多落磯山脈，道奇本季維持聯盟前列成績，先發輪值及打線持續成為焦點話題。</div>
-        <div class="news-source">來源：ESPN</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">印第安納波利斯500車手 Malukas、Armstrong 成為話題焦點</div>
-        <div class="news-date">[05/25]</div>
-        <div class="news-summary">IndyCar賽事中，David Malukas 與 Marcus Armstrong 的表現引發媒體廣泛關注，兩人的賽車策略與場上競爭吸引大量車迷目光。</div>
-        <div class="news-source">來源：FOX Sports</div>
-      </div>
-    </div>
-
-    <!-- 金融財經 -->
-    <div class="col">
-      <div class="col-title">📈 金融財經 Finance</div>
-
-      <div class="news-item">
-        <div class="news-headline">美國Q1 GDP成長2.0%，超越Q4的0.5%，企業投資大增</div>
-        <div class="news-date">[05/26]</div>
-        <div class="news-summary">美國商務部公布2026年第一季GDP年化成長率2.0%，大幅優於上季的0.5%；企業投資季增逾10%，私人非農就業平均月增幅達2025年全年平均的2.5倍以上。</div>
-        <div class="news-source">來源：Crestwood Advisors</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">伊朗衝突推升油價近60%，通膨隱憂再起</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">自伊朗衝突爆發以來，油價已累計上漲近60%，核心PCE通膨年增3.5%。聯準會官員表示暫不急於升息，密切觀察能源價格對整體經濟的影響。</div>
-        <div class="news-source">來源：Federal Reserve</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">失業率4.3%-4.5%區間震盪，平均時薪年增3.5%</div>
-        <div class="news-date">[05/26]</div>
-        <div class="news-summary">美國失業率持續在4.3%至4.5%之間橫盤，勞動市場展現韌性；3月非農就業增加17.8萬人，平均時薪年增3.5%，薪資成長仍具通膨壓力。</div>
-        <div class="news-source">來源：BLS / Crestwood Advisors</div>
-      </div>
-    </div>
-
-    <!-- 娛樂演藝 -->
-    <div class="col">
-      <div class="col-title">🎤 娛樂演藝 Entertainment</div>
-
-      <div class="news-item">
-        <div class="news-headline">Netflix《完美配對》第四季揭曉冠軍情侶</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">Netflix實境秀《Perfect Match》第四季5月27日公布決賽結果，英國《盲婚試愛》選手 Sophie Willett 與澳洲版《閃婚男女》Dave Hand 奪冠，成為「最強配對」。</div>
-        <div class="news-source">來源：E! News</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">Jennifer Lopez 帶雙胞胎歡慶陣亡將士紀念日，溫馨親情曝光</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">Jennifer Lopez 在社群分享與前夫Marc Anthony 18歲雙胞胎 Max 和 Emme 共度陣亡將士紀念日假期的溫馨畫面，家人同樂引粉絲讚嘆。</div>
-        <div class="news-source">來源：E! News</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">Rumer Willis：女兒與患病父親Bruce Willis情誼令她感激</div>
-        <div class="news-date">[05/26]</div>
-        <div class="news-summary">Rumer Willis 接受採訪時表示，2歲女兒 Louetta 與患有額顳葉失智症的父親Bruce Willis之間的特殊情誼令她深感感動，並對公眾的支持表達謝意。</div>
-        <div class="news-source">來源：E! News</div>
-      </div>
-    </div>
-
-    <!-- 最新電影 -->
-    <div class="col">
-      <div class="col-title">🎬 最新電影 Movies</div>
-
-      <div class="news-item">
-        <div class="news-headline">
-          <a href="https://www.cinemablend.com/movies/upcoming-movies-in-2026-new-movie-release-dates" target="_blank">《穿著Prada的惡魔2》5/1全球上映，票房亮眼</a>
-        </div>
-        <div class="news-date">[05/01]</div>
-        <div class="news-summary">由David Frankel執導，Meryl Streep、Anne Hathaway、Emily Blunt 重聚時尚世界，故事延續原版精彩衝突，全球觀眾期待已久，首週票房創佳績。</div>
-        <div class="news-source">來源：Cinemablend</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">
-          <a href="https://variety.com/lists/best-movies-streaming-may-2026/" target="_blank">《I Love Boosters》Keke Palmer主演，Rotten Tomatoes高分好評</a>
-        </div>
-        <div class="news-date">[05/22]</div>
-        <div class="news-summary">由Boots Riley執導的《I Love Boosters》講述時尚大亨遭竊事件，Keke Palmer主演，首映於SXSW電影節獲得極佳迴響，串流平台評分亦相當高。</div>
-        <div class="news-source">來源：Variety</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">《The Backrooms》5/29恐怖新片登場，改編網路傳說</div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">改編自風靡全球網路的「後台空間」都市傳說，由Chiwetel Ejiofor 主演，心理驚悚元素融入超自然恐怖，是本月末最受矚目的院線新片。</div>
-        <div class="news-source">來源：Movie Insider</div>
-      </div>
-    </div>
-
   </div>
 </div>
 
-<!-- ════════════════════════ 日本 ════════════════════════ -->
-<div class="region-block">
-  <div class="region-header">🇯🇵 日本 · JAPAN</div>
-  <div class="columns">
+<!-- 美國 -->
+<div class="region-section">
+  <div class="region-header"><span class="flag">🇺🇸</span> 美國 United States</div>
+  <div class="news-grid">
 
-    <!-- 資訊科技 -->
-    <div class="col">
-      <div class="col-title">💻 資訊科技 IT / Tech</div>
+    <!-- 科技 -->
+    <div class="news-col">
+      <div class="col-category">💻 資訊科技 IT/Tech</div>
 
       <div class="news-item">
-        <div class="news-headline">
-          <a href="https://www.cnbc.com/2026/05/07/japan-softbank-tech-shares-nikkei-to-record-high.html" target="_blank">SoftBank股價黃金週後大漲逾18%，帶動日經225創新高</a>
-        </div>
-        <div class="news-date">[05/07]</div>
-        <div class="news-summary">日本黃金週長假結束後，SoftBank股價單日飆漲逾18%，帶動日經225指數突破歷史高位，科技類股整體走強，成為今年日本股市最亮眼的一幕。</div>
+        <div class="news-title">Meta上調資本支出至1,450億美元　押注AI未來</div>
+        <div class="news-date">[05/28]</div>
+        <div class="news-summary">Meta執行長祖克柏宣布將2026年資本支出提高至多達1,450億美元，強調AI技術進步促使公司重新評估最佳人員規模，顯示科技巨頭對AI投資信心不減。</div>
         <div class="news-source">來源：CNBC</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">日本1.23兆日圓刺激方案聚焦AI與半導體自給自足</div>
-        <div class="news-date">[05/20]</div>
-        <div class="news-summary">日本政府宣布規模達1.23兆日圓的科技刺激方案，重點支持Rapidus公司研發2奈米晶片、本土AI開發及半導體供應鏈韌性建設，以強化科技自主能力。</div>
-        <div class="news-source">來源：ainvest.com</div>
+        <div class="news-title">Snowflake財報亮眼　股價暴漲36%</div>
+        <div class="news-date">[05/28]</div>
+        <div class="news-summary">雲端數據公司Snowflake公布優於預期財報，並宣布未來與Amazon AWS簽訂60億美元服務合約，帶動股價單日暴漲36%，成為本週科技股最大亮點。</div>
+        <div class="news-source">來源：TechCrunch</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">日本新創SORA Technology獲250萬美元融資，以無人機對抗瘧疾</div>
-        <div class="news-date">[05/20]</div>
-        <div class="news-summary">日本新創公司SORA Technology完成250萬美元融資，計畫將無人機與AI解決方案擴展至非洲瘧疾防控領域，展現日本深科技在全球人道議題上的新應用。</div>
-        <div class="news-source">來源：JapanInno.com</div>
+        <div class="news-title">Google與Blackstone合組AI基礎設施合資公司</div>
+        <div class="news-date">[05/27]</div>
+        <div class="news-summary">Google與黑石集團宣布成立AI基礎設施合資公司，黑石初期承諾投入50億美元股本，目標在2027年前建置500兆瓦算力，加速美國AI算力擴張。</div>
+        <div class="news-source">來源：Tech Startups</div>
       </div>
     </div>
 
     <!-- 體育 -->
-    <div class="col">
-      <div class="col-title">🏅 體育 Sports</div>
+    <div class="news-col">
+      <div class="col-category">🏅 體育 Sports</div>
 
       <div class="news-item">
-        <div class="news-headline">
-          <a href="https://www.aljazeera.com/amp/sports/2026/5/22/japans-world-cup-2026-team-preview-players-to-watch-group-squad" target="_blank">久保建英領銜！日本公布2026世界盃最終大名單</a>
-        </div>
-        <div class="news-date">[05/22]</div>
-        <div class="news-summary">日本成為首支（非地主國）確定晉級2026 FIFA世界盃的球隊，久保建英（Takefusa Kubo）將扮演關鍵角色，填補因傷缺陣的三笘薰（Mitoma）留下的空缺。</div>
-        <div class="news-source">來源：Al Jazeera</div>
+        <div class="news-title">法網爆冷！世界球王Sinner五盤出局</div>
+        <div class="news-date">[05/29]</div>
+        <div class="news-summary">2026年法國網球公開賽世界球王Jannik Sinner因抽筋問題在五盤激戰後爆冷出局，引發全球球迷震驚。美國選手Frances Tiafoe精彩發揮，繼續挺進。</div>
+        <div class="news-source">來源：ESPN / NBC Sports</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">東京舉行冬奧英雄遊行，史上首次冬季版歸國慶典</div>
-        <div class="news-date">[04/25]</div>
-        <div class="news-summary ">日本奧委會與帕運委員會於4月25日在東京共同舉辦「米蘭科爾蒂納2026冬奧帕運日本隊感謝遊行」，114名選手與市民面對面互動，為日本冬奧史上首次舉辦遊行。</div>
-        <div class="news-date stale">[04/25] ⚠️</div>
-        <div class="news-source">來源：Olympics.com</div>
+        <div class="news-title">Celtics教練Mazzulla榮獲NBA年度最佳教練</div>
+        <div class="news-date">[05/26] <span class="stale">⚠️</span></div>
+        <div class="news-summary">波士頓塞爾提克隊教練Joe Mazzulla於5月26日獲選為2025-26球季NBA年度最佳教練，帶領球隊本季再創佳績，成為聯盟最受肯定的帥才。</div>
+        <div class="news-source">來源：ESPN</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">AFC冠軍聯賽決賽：町田澤維亞加時落敗，飲恨屈居亞軍</div>
-        <div class="news-date">[05/25]</div>
-        <div class="news-summary">FC 町田澤維亞（FC Machida Zelvia）在AFC冠軍聯賽菁英組決賽中以0:1敗給衛冕冠軍沙烏地阿拉伯的Al Ahli，在加時賽中落敗，遺憾與亞洲冠軍擦身而過。</div>
-        <div class="news-source">來源：J.League / The Japan Times</div>
+        <div class="news-title">MLB名將Bob Horner辭世　享年68歲</div>
+        <div class="news-date">[05/26] <span class="stale">⚠️</span></div>
+        <div class="news-summary">前亞特蘭大勇士隊強打Bob Horner於5月26日辭世，享年68歲。Horner曾創下MLB單場四支全壘打的輝煌紀錄，被視為美棒史上最具爆發力的砲手之一。</div>
+        <div class="news-source">來源：MLB / Yahoo Sports</div>
       </div>
     </div>
 
-    <!-- 金融財經 -->
-    <div class="col">
-      <div class="col-title">📈 金融財經 Finance</div>
+    <!-- 金融 -->
+    <div class="news-col">
+      <div class="col-category">💰 金融財經 Finance</div>
 
       <div class="news-item">
-        <div class="news-headline">日經225指數攀至65,800點，科技股領漲、金融股拖累</div>
+        <div class="news-title">美股S&P 500升至7,561點　Nasdaq創新高</div>
         <div class="news-date">[05/28]</div>
-        <div class="news-summary">日經225指數漲1.3%至65,800點以上，廣域東證指數漲0.3%至3,950點，Advantest大漲5.3%、東京電子升3.8%，但三菱UFJ、住友三井等銀行股下跌逾1%。</div>
-        <div class="news-source">來源：Trading Economics</div>
+        <div class="news-summary">美股5月28日繼續創高，S&P 500指數漲至7,561點，Nasdaq 100同步刷新紀錄，Microsoft、Oracle、Palantir等AI相關股票漲幅達3至4%，科技股持續引領多頭。</div>
+        <div class="news-source">來源：CNBC</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">日銀副總裁：升息時機取決於中東局勢對日本經濟的衝擊</div>
+        <div class="news-title">美伊簽訂60天停火備忘錄　能源市場回穩</div>
+        <div class="news-date">[05/28]</div>
+        <div class="news-summary">美國與伊朗達成60天停火延長協議，逐步恢復波灣能源出口，消息帶動原油價格下滑，緩解市場對通膨壓力的擔憂，推動美股上行。</div>
+        <div class="news-source">來源：Crestwood Advisors</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">PCE通膨升至三年高點　Fed立場偏鷹</div>
+        <div class="news-date">[05/29]</div>
+        <div class="news-summary">美國個人消費支出（PCE）物價指數升至三年高位，數據顯示通膨仍具黏性，聯準會偏鷹立場持續，市場預期降息時程將進一步延後。</div>
+        <div class="news-source">來源：MarketScreener / CNBC</div>
+      </div>
+    </div>
+
+    <!-- 娛樂 -->
+    <div class="news-col">
+      <div class="col-category">🎤 娛樂演藝 Entertainment</div>
+
+      <div class="news-item">
+        <div class="news-title">《Love Island USA》第八季下週登場　新卡司曝光</div>
+        <div class="news-date">[05/29]</div>
+        <div class="news-summary">CBS人氣真人秀《Love Island USA》第八季定於6月2日開播，製作單位陸續公開新一屆參賽者陣容，吸引大批粉絲期待，預計再掀收視熱潮。</div>
+        <div class="news-source">來源：TMZ / CBS</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">Helen Mirren力挺Tom Hardy　《MobLand》幕後風波</div>
+        <div class="news-date">[05/28]</div>
+        <div class="news-summary">奧斯卡影后Helen Mirren公開為《MobLand》共同主演Tom Hardy發聲，力挺其在拍攝期間的專業態度，引發媒體廣泛關注，兩人默契成為話題焦點。</div>
+        <div class="news-source">來源：Entertainment Weekly</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">吉兒拜登回憶錄：親眼目睹辯論慘敗「深感震驚」</div>
         <div class="news-date">[05/27]</div>
-        <div class="news-summary">日本銀行副總裁日見野亮雄表示，日銀仍致力於進一步升息，但時機與步伐將取決於中東衝突如何影響日本通膨與經濟前景，態度偏向謹慎。</div>
-        <div class="news-source">來源：The Japan Times</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">日本金融廳擬修訂公司治理守則，強化資本配置效率</div>
-        <div class="news-date">[05/20]</div>
-        <div class="news-summary">日本金融廳計畫今年修訂企業治理守則，重點將聚焦於有效的資本配置與現金用途改善，推動上市公司更積極地將閒置現金投入成長，提升股東回報。</div>
-        <div class="news-source">來源：Nikkei Asia</div>
+        <div class="news-summary">前美國第一夫人吉兒拜登（Jill Biden）新出版回憶錄中揭露，她在現場目睹丈夫去年災難性辯論表現時感到「十分震驚」，引發社會廣泛討論。</div>
+        <div class="news-source">來源：Fox News / CBS News</div>
       </div>
     </div>
 
-    <!-- 娛樂演藝 -->
-    <div class="col">
-      <div class="col-title">🎤 娛樂演藝 Entertainment</div>
+    <!-- 電影 -->
+    <div class="news-col">
+      <div class="col-category">🎬 最新電影 Movies</div>
 
       <div class="news-item">
-        <div class="news-headline">X JAPAN YOSHIKI獲娛樂界最高榮譽「榮譽獎章」</div>
-        <div class="news-date">[05/20]</div>
-        <div class="news-summary">搖滾傳奇X JAPAN的YOSHIKI將榮獲美國娛樂社區基金（Entertainment Community Fund）頒發的「榮譽獎章」，這是美國演藝界歷史最悠久的慈善機構授予的最高殊榮。</div>
-        <div class="news-source">來源：J-Generation</div>
+        <div class="news-title">《The Backrooms》今日上映　A24恐怖力作</div>
+        <div class="news-date">[05/29]</div>
+        <div class="news-summary">A24出品的恐怖電影《The Backrooms》今日正式上映，由Chiwetel Ejiofor與Renate Reinsve主演，改編自風靡全球的網路都市傳說，早場口碑引發熱議。</div>
+        <div class="news-source">來源：CinemaBlend / Rotten Tomatoes</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">廣末涼子宣布7月生日特別演唱會，Tokyo Cotton Club三連演</div>
-        <div class="news-date">[05/20]</div>
-        <div class="news-summary">女演員兼歌手廣末涼子宣布將於7月18日至25日在東京丸之內Cotton Club舉行生日特別演唱會「Best Day Ever ～ Crescent River」，連演多場，預售票供不應求。</div>
-        <div class="news-source">來源：TokyoHive</div>
+        <div class="news-title"><span class="stale">⚠️</span> 《曼達洛人與古古》首週票房強勁　Star Wars迷瘋狂</div>
+        <div class="news-date">[05/22] <span class="stale">⚠️</span></div>
+        <div class="news-summary">《曼達洛人與古古》上映首週在北美創下亮麗票房，Star Wars迷蜂擁入場，影評普遍給予正面評價，成為暑假前最受歡迎的大型製作之一。</div>
+        <div class="news-source">來源：Box Office Mojo</div>
       </div>
 
       <div class="news-item">
-        <div class="news-headline">YouTuber鈴木優花推出第二本數位寫真集《In Bloom》</div>
-        <div class="news-date">[05/07]</div>
-        <div class="news-summary">人氣YouTuber鈴木優花（Yuuka Suzuki）於5月7日發布數位寫真集《In Bloom》，為三個月連續發行系列的第二彈，話題度持續發酵，粉絲下載踴躍。</div>
-        <div class="news-source">來源：Japan Today</div>
-      </div>
-    </div>
-
-    <!-- 最新電影 -->
-    <div class="col">
-      <div class="col-title">🎬 最新電影 Movies</div>
-
-      <div class="news-item">
-        <div class="news-headline">
-          <a href="https://filmarks.com/list/now" target="_blank">《曼達洛人與葛羅古》日本5月公映，觀眾好評如潮</a>
-        </div>
-        <div class="news-date">[05/22]</div>
-        <div class="news-summary">星際大戰系列最新電影《曼達洛人與葛羅古》在日本同步公映，憑藉強大的星戰IP號召力，上映首週即登票房冠軍，口碑亦相當正面。</div>
-        <div class="news-source">來源：Filmarks / 映画.com</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">
-          <a href="https://press.moviewalker.jp/list/coming/2026/05/" target="_blank">5月29日四部電影同日公映，包含《劇場版モノノ怪》三部曲完結篇</a>
-        </div>
-        <div class="news-date">[05/27]</div>
-        <div class="news-summary">5月29日多部電影同日上映：《劇場版モノノ怪》系列三部曲第三章壓軸登場；另有《湯姆與傑瑞大冒險》（真人動畫版）及高畑淳子主演的《お終活》第三集等。</div>
-        <div class="news-source">來源：MOVIE WALKER PRESS</div>
-      </div>
-
-      <div class="news-item">
-        <div class="news-headline">《穿著Prada的惡魔2》（プラダを着た悪魔2）席捲日本票房</div>
-        <div class="news-date">[05/01]</div>
-        <div class="news-summary">好萊塢時尚喜劇續集在日本上映後反應熱烈，粉絲對Meryl Streep重返女魔頭角色的期待化為高票房，日本媒體一致稱讚其服裝造型更勝前作。</div>
-        <div class="news-source">來源：cinemacafe.net</div>
+        <div class="news-title">史蒂芬史匹柏《Disclosure Day》預告曝光　艾蜜莉布朗主演</div>
+        <div class="news-date">[05/25] <span class="stale">⚠️</span></div>
+        <div class="news-summary">史蒂芬史匹柏執導、Emily Blunt主演的科幻大片《Disclosure Day》最新預告正式釋出，預計6月12日上映，劇情圍繞UFO真相揭露，卡司陣容強大令影迷期待。</div>
+        <div class="news-source">來源：FirstShowing / IMDB</div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- 頁腳 -->
-<footer>
-  <p>由 Claude AI 自動整理 · 每日更新 | 2026年5月28日（星期四）</p>
-  <p style="margin-top:4px;font-size:.75rem;color:#999;">本報紙內容由 AI 依公開新聞來源整理，僅供參考。新聞連結請自行查閱原始報導以確認正確性。</p>
-</footer>
+<!-- 日本 -->
+<div class="region-section">
+  <div class="region-header"><span class="flag">🇯🇵</span> 日本 Japan</div>
+  <div class="news-grid">
+
+    <!-- 科技 -->
+    <div class="news-col">
+      <div class="col-category">💻 資訊科技 IT/Tech</div>
+
+      <div class="news-item">
+        <div class="news-title">Xiaomi 17T Series全球發表　搭載徠卡影像技術</div>
+        <div class="news-date">[05/28]</div>
+        <div class="news-summary">小米於5月28日舉辦全球發表會，正式發布Xiaomi 17T系列智慧型手機，繼續深化與徠卡（Leica）的戰略合作，強化高階影像技術，進一步競爭日本市場。</div>
+        <div class="news-source">來源：Xiaomi Japan</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">IBM、Cleveland Clinic與RIKEN量子計算突破　模擬萬原子蛋白質</div>
+        <div class="news-date">[05/05] <span class="stale">⚠️</span></div>
+        <div class="news-summary">IBM、Cleveland Clinic與日本理化學研究所（RIKEN）合作，透過結合量子計算與超級電腦技術，成功模擬多達12,635個原子的蛋白質系統，開創新里程碑。</div>
+        <div class="news-source">來源：RIKEN / Japan Times</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">日本AI新創IPRy、PixieDust等完成新一輪融資</div>
+        <div class="news-date">[05/22] <span class="stale">⚠️</span></div>
+        <div class="news-summary">本週日本新創融資熱絡，AI電話公司IVRy、波動控制醫療科技PixieDust Technologies及日圓穩定幣JPYC等分別完成融資，AI、醫療與Web3領域吸金強勁。</div>
+        <div class="news-source">來源：note.com / Tech VC weekly</div>
+      </div>
+    </div>
+
+    <!-- 體育 -->
+    <div class="news-col">
+      <div class="col-category">🏅 體育 Sports</div>
+
+      <div class="news-item">
+        <div class="news-title">日本足球隊集訓備戰世界盃　永友涼太入選第五屆世界盃</div>
+        <div class="news-date">[05/25] <span class="stale">⚠️</span></div>
+        <div class="news-summary">日本男足國家隊5月25日在千葉展開集訓，備戰2026年北美世界盃。39歲的長友佑都（FC東京）入選，創下日本球員連續出賽五屆世界盃的歷史紀錄。</div>
+        <div class="news-source">來源：Japan Times / News On Japan</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">若隆景大相撲夏場所奪冠　傷後復出震撼日本武道館</div>
+        <div class="news-date">[05/24] <span class="stale">⚠️</span></div>
+        <div class="news-summary">大相撲力士若隆景在完成重大膝蓋手術、跌落下位之後奇蹟復出，於5月24日奪得2026年夏場所天皇盃，是其生涯第二冠，令日本全國相撲迷振奮不已。</div>
+        <div class="news-source">來源：Japan Times</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">讀賣巨人隊教練阿部因家暴案辭職　日職震驚</div>
+        <div class="news-date">[05/26] <span class="stale">⚠️</span></div>
+        <div class="news-summary">日本職棒讀賣巨人隊教練阿部慎之助（Shinnosuke Abe）於5月26日因涉嫌在東京自家傷害長女遭逮捕，隨即宣布辭職，在日本職棒界引發巨大衝擊。</div>
+        <div class="news-source">來源：Japan Times</div>
+      </div>
+    </div>
+
+    <!-- 金融 -->
+    <div class="news-col">
+      <div class="col-category">💰 金融財經 Finance</div>
+
+      <div class="news-item">
+        <div class="news-title">日本Q1 GDP年率成長2.1%　超越預期</div>
+        <div class="news-date">[05/19] <span class="stale">⚠️</span></div>
+        <div class="news-summary">日本2026年第一季GDP年率成長2.1%，優於市場預估的1.7%，顯示日本經濟短期動能仍在，然日本銀行同步下修全年成長預測至0.5%，並上調通膨預期至2.8%。</div>
+        <div class="news-source">來源：CNBC / OECD</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">日本淨海外資產創新高　但遭中國超越退居第三</div>
+        <div class="news-date">[05/26] <span class="stale">⚠️</span></div>
+        <div class="news-summary">日本淨海外資產達561.8兆日圓（約3.5兆美元），雖創歷史新高，但中國已以636.3兆日圓超越日本，使日本從全球最大債權國地位退居第三，僅次德國與中國。</div>
+        <div class="news-source">來源：Japan Times</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">日銀警告：中東危機推升油價　恐壓縮企業與家庭收入</div>
+        <div class="news-date">[05/07] <span class="stale">⚠️</span></div>
+        <div class="news-summary">日本銀行在5月7日決策會議上警告，中東局勢推升原油價格，可能壓縮企業利潤及家庭實質所得，本年度日本經濟成長有下行風險，市場關注政策走向。</div>
+        <div class="news-source">來源：Trading Economics / IMF</div>
+      </div>
+    </div>
+
+    <!-- 娛樂 -->
+    <div class="news-col">
+      <div class="col-category">🎤 娛樂演藝 Entertainment</div>
+
+      <div class="news-item">
+        <div class="news-title">廣末涼子宣布七月生日特別演唱會　東京棉花俱樂部登場</div>
+        <div class="news-date">[05/27]</div>
+        <div class="news-summary">日本知名女星廣末涼子（Ryoko Hirosue）宣布將於7月18至25日在東京丸之內Cotton Club舉辦生日特別演唱會「Best Day Ever ～Crescent River」，粉絲熱切期待。</div>
+        <div class="news-source">來源：Arama! Japan</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">倫敦靴子1號2號解散一周年　田村亮與田村敦重聚舞台</div>
+        <div class="news-date">[05/26] <span class="stale">⚠️</span></div>
+        <div class="news-summary">日本人氣搞笑組合「倫敦靴子1號2號」解散滿一周年，田村亮與田村敦時隔一年再度同台亮相，引發網路熱烈回響，粉絲紛紛感嘆兩人搭檔的默契依舊。</div>
+        <div class="news-source">來源：Arama! Japan / Neo-Tokyo 2099</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">YouTuber鈴木優花推出寫真集《In Bloom》數位版</div>
+        <div class="news-date">[05/07] <span class="stale">⚠️</span></div>
+        <div class="news-summary">日本人氣YouTuber鈴木優花（Yuuka Suzuki）於5月7日發布數位寫真集《In Bloom》，這是她連續三個月發布系列作品中的第二彈，吸引大批訂閱者熱情支持。</div>
+        <div class="news-source">來源：J-Generation</div>
+      </div>
+    </div>
+
+    <!-- 電影/動漫 -->
+    <div class="news-col">
+      <div class="col-category">🎬 電影動漫 Movies/Anime</div>
+
+      <div class="news-item">
+        <div class="news-title">《進擊的巨人：最後之戰》劇場版北美特別上映</div>
+        <div class="news-date">[05/18] <span class="stale">⚠️</span></div>
+        <div class="news-summary">《進擊的巨人：最後之戰（Attack on Titan: The Last Attack）》5月18日起在Crunchyroll合作的280多家北美影院舉辦特別公映活動，引發動漫迷搶票熱潮。</div>
+        <div class="news-source">來源：Yatta-Tachi / Screen Rant</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">《惡魔獵人：鬼泣》第二季Netflix上線</div>
+        <div class="news-date">[05/12] <span class="stale">⚠️</span></div>
+        <div class="news-summary">Netflix動畫《惡魔獵人：鬼泣》第二季於5月12日上線，Dante再次登場，以強烈動作風格為2026年春夏動漫季帶來熱血衝擊，全球動漫迷反應熱烈。</div>
+        <div class="news-source">來源：What's on Netflix / GamesRadar</div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-title">《間諜家家酒：白色行動2》、新海誠新作備受期待</div>
+        <div class="news-date">[05/29]</div>
+        <div class="news-summary">2026年下半年日本動漫電影陣容強大，《Spy x Family: Code White 2》、《死神千年血戰》劇場版及新海誠最新作品均預計年底前推出，已成全球動漫迷最期待的話題。</div>
+        <div class="news-source">來源：Screen Rant / Fun Japan</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  ☞ 由 Claude AI 自動整理 · 每日更新 ☜<br>
+  發佈日期：2026年5月29日（星期五）｜⚠️ 標示表示新聞距今超過2天，請自行確認最新狀況<br>
+  版權聲明：本頁僅作新聞彙整，內容版權歸各原始媒體所有。
+</div>
 
 </body>
 </html>
